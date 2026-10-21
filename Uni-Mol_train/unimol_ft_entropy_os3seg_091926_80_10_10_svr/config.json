@@ -1,0 +1,30 @@
+{
+  "kind": "unimol_ft_entropy_os3seg_80_10_10_svr",
+  "train_source": "/home/michael/data/unimol_training/testing2/hybrid_data/hybrid_train_091926.csv",
+  "unimol_source": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_os3seg_091926_80_10_10",
+  "output": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_os3seg_091926_80_10_10_svr",
+  "model": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_os3seg_091926_80_10_10_svr/svr_unimol_stack.joblib",
+  "n_pool": 14459,
+  "n_train": 11567,
+  "n_val": 1446,
+  "n_test": 1446,
+  "n_unimol_rows": 16511,
+  "oversample": true,
+  "oversample_scheme": "n<12 x5, 12<=n<=15 x3, n>15 x1",
+  "n_descriptors": 288,
+  "stack_features": 289,
+  "split_seed": 42,
+  "train_fraction": 0.8,
+  "val_fraction": 0.1,
+  "test_fraction": 0.1,
+  "svr": {
+    "kernel": "rbf",
+    "C": 10000,
+    "epsilon": 0.1,
+    "gamma": "scale",
+    "scaled": false,
+    "cache_size_mb": 4096,
+    "n_support": 11381
+  },
+  "note": "Same 3-segment oversampled Uni-Mol predictions as unimol_ft_entropy_os3seg_091926_80_10_10. Huber stack replaced by unscaled RBF SVR (kernel=rbf, C=10000, epsilon=0.1) from SVR_predS_bond.py. Inputs are the 288 descriptors plus UniMolPred, fit on the unique 11,567 rows."
+}

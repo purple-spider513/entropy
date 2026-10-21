@@ -1,0 +1,92 @@
+{
+  "sets": [
+    {
+      "set": "hybrid_std128",
+      "excluded_overlap": 1,
+      "unimol": {
+        "n": 127,
+        "mae": 25.1993,
+        "rmse": 29.1187,
+        "r2": 0.711,
+        "bias": 24.1043
+      },
+      "unimol_svr": {
+        "n": 127,
+        "mae": 25.8565,
+        "rmse": 29.5618,
+        "r2": 0.7022,
+        "bias": 25.0455
+      }
+    },
+    {
+      "set": "hybrid_std109",
+      "excluded_overlap": 0,
+      "unimol": {
+        "n": 109,
+        "mae": 47.2376,
+        "rmse": 55.7872,
+        "r2": -0.4,
+        "bias": 46.7211
+      },
+      "unimol_svr": {
+        "n": 109,
+        "mae": 48.4746,
+        "rmse": 57.0017,
+        "r2": -0.4616,
+        "bias": 48.079
+      }
+    },
+    {
+      "set": "hybrid_pdbbind",
+      "excluded_overlap": 0,
+      "unimol": {
+        "n": 311,
+        "mae": 14.2226,
+        "rmse": 19.5618,
+        "r2": 0.9916,
+        "bias": 1.0907
+      },
+      "unimol_svr": {
+        "n": 311,
+        "mae": 13.8944,
+        "rmse": 19.299,
+        "r2": 0.9918,
+        "bias": 5.8048
+      }
+    },
+    {
+      "set": "hybrid_std6074",
+      "excluded_overlap": 4,
+      "unimol": {
+        "n": 6070,
+        "mae": 20.557,
+        "rmse": 26.7837,
+        "r2": 0.8505,
+        "bias": 17.4292
+      },
+      "unimol_svr": {
+        "n": 6070,
+        "mae": 21.1149,
+        "rmse": 27.2713,
+        "r2": 0.845,
+        "bias": 18.699
+      }
+    }
+  ],
+  "combined": {
+    "unimol": {
+      "n": 6617,
+      "mae": 20.7879,
+      "rmse": 27.2689,
+      "r2": 0.9324,
+      "bias": 17.2719
+    },
+    "unimol_svr": {
+      "n": 6617,
+      "mae": 21.3172,
+      "rmse": 27.7497,
+      "r2": 0.93,
+      "bias": 18.6988
+    }
+  }
+}

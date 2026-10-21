@@ -1,0 +1,135 @@
+{
+  "accepted": true,
+  "mode_winners": {
+    "gnn_only": {
+      "candidate": "gnn_only",
+      "dev_metrics": {
+        "mae": 11.6403,
+        "pearson": 0.996518,
+        "r2": 0.99292,
+        "rmse": 16.3113
+      },
+      "model_config": {
+        "architecture": "gine",
+        "attentive_timesteps": 2,
+        "dropout": 0.0,
+        "hidden_channels": 128,
+        "mode": "gnn",
+        "num_layers": 3,
+        "tabular_hidden": 256,
+        "tabular_out": 128,
+        "use_distance_features": false
+      }
+    },
+    "hybrid": {
+      "candidate": "hybrid",
+      "dev_metrics": {
+        "mae": 11.0667,
+        "pearson": 0.99713,
+        "r2": 0.993861,
+        "rmse": 15.1895
+      },
+      "model_config": {
+        "architecture": "gine",
+        "attentive_timesteps": 2,
+        "dropout": 0.0,
+        "hidden_channels": 128,
+        "mode": "fused",
+        "num_layers": 5,
+        "tabular_hidden": 256,
+        "tabular_out": 128,
+        "use_distance_features": true
+      }
+    }
+  },
+  "model_config": {
+    "architecture": "gine",
+    "attentive_timesteps": 2,
+    "dropout": 0.0,
+    "hidden_channels": 128,
+    "mode": "fused",
+    "num_layers": 5,
+    "tabular_hidden": 256,
+    "tabular_out": 128,
+    "use_distance_features": true
+  },
+  "modes": {
+    "gnn_only": {
+      "dev": {
+        "mae": 11.6403,
+        "pearson": 0.996518,
+        "r2": 0.99292,
+        "rmse": 16.3113
+      },
+      "test": {
+        "mae": 11.9724,
+        "pearson": 0.995772,
+        "r2": 0.991406,
+        "rmse": 18.0941
+      },
+      "train": {
+        "mae": 10.1973,
+        "pearson": 0.997396,
+        "r2": 0.994619,
+        "rmse": 14.1521
+      }
+    },
+    "hybrid": {
+      "dev": {
+        "mae": 11.0667,
+        "pearson": 0.99713,
+        "r2": 0.993861,
+        "rmse": 15.1895
+      },
+      "test": {
+        "mae": 10.827,
+        "pearson": 0.995934,
+        "r2": 0.991623,
+        "rmse": 17.8643
+      },
+      "train": {
+        "mae": 6.7148,
+        "pearson": 0.999029,
+        "r2": 0.99781,
+        "rmse": 9.0291
+      }
+    }
+  },
+  "oversampling": {
+    "above_15_x1": 9599,
+    "below_12_x5": 530,
+    "from_12_to_15_x3": 1438,
+    "oversampled_train_rows": 16563,
+    "unique_train": 11567
+  },
+  "pearson_target": 0.95,
+  "selected_candidate": "hybrid",
+  "selected_dev_metrics": {
+    "mae": 11.0667,
+    "pearson": 0.99713,
+    "r2": 0.993861,
+    "rmse": 15.1895
+  },
+  "selected_mode": "hybrid",
+  "selection_objective": "pearson",
+  "splits": {
+    "dev": {
+      "mae": 11.0667,
+      "pearson": 0.99713,
+      "r2": 0.993861,
+      "rmse": 15.1895
+    },
+    "test": {
+      "mae": 10.827,
+      "pearson": 0.995934,
+      "r2": 0.991623,
+      "rmse": 17.8643
+    },
+    "train": {
+      "mae": 6.7148,
+      "pearson": 0.999029,
+      "r2": 0.99781,
+      "rmse": 9.0291
+    }
+  }
+}

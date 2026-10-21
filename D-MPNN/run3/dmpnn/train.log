@@ -1,0 +1,105 @@
+2026-09-24T19:31:47 - INFO:chemprop.cli.main - Running in mode 'train' with args: {'smiles_columns': None, 'reaction_columns': None, 'no_header_row': False, 'num_workers': 4, 'batch_size': 64, 'accelerator': 'gpu', 'devices': '1', 'rxn_mode': 'REAC_DIFF', 'multi_hot_atom_featurizer_mode': 'V2', 'keep_h': False, 'add_h': False, 'ignore_stereo': False, 'reorder_atoms': False, 'molecule_featurizers': None, 'descriptors_path': None, 'descriptors_columns': None, 'no_descriptor_scaling': False, 'no_atom_feature_scaling': False, 'no_atom_descriptor_scaling': False, 'no_bond_feature_scaling': False, 'no_bond_descriptor_scaling': False, 'atom_features_path': None, 'atom_descriptors_path': None, 'bond_features_path': None, 'bond_descriptors_path': None, 'constraints_path': None, 'constraints_to_targets': None, 'use_cuikmolmaker_featurization': False, 'config_path': None, 'data_path': [PosixPath('/home/michael/data/D-MPNN_training/run3/dmpnn/train.csv')], 'output_dir': PosixPath('/home/michael/data/D-MPNN_training/run3/dmpnn'), 'remove_checkpoints': False, 'checkpoint': None, 'freeze_encoder': False, 'model_frzn': None, 'frzn_ffn_layers': 0, 'from_foundation': 'CheMeleon', 'ensemble_size': 1, 'message_hidden_dim': [300], 'message_bias': False, 'depth': [3], 'undirected': False, 'dropout': 0.0, 'mpn_shared': False, 'aggregation': 'norm', 'aggregation_norm': 100, 'atom_messages': False, 'activation': 'RELU', 'activation_args': None, 'ffn_hidden_dim': [300], 'ffn_num_layers': 1, 'batch_norm': False, 'multiclass_num_classes': 3, 'atom_task_weights': None, 'atom_ffn_hidden_dim': [300], 'atom_ffn_num_layers': 1, 'atom_multiclass_num_classes': 3, 'bond_task_weights': None, 'bond_ffn_hidden_dim': [300], 'bond_ffn_num_layers': 1, 'bond_multiclass_num_classes': 3, 'atom_constrainer_ffn_hidden_dim': [300], 'atom_constrainer_ffn_num_layers': 1, 'bond_constrainer_ffn_hidden_dim': [300], 'bond_constrainer_ffn_num_layers': 1, 'weight_column': None, 'target_columns': ['entropy'], 'mol_target_columns': None, 'atom_target_columns': None, 'bond_target_columns': None, 'ignore_columns': None, 'no_cache': False, 'splits_column': None, 'task_type': 'regression', 'loss_function': None, 'v_kl': 0.0, 'eps': 1e-08, 'alpha': 0.1, 'metrics': ['r2', 'mae', 'rmse'], 'tracking_metric': 'val_loss', 'show_individual_scores': False, 'task_weights': None, 'warmup_epochs': 2, 'init_lr': 0.0001, 'max_lr': 0.001, 'final_lr': 0.0001, 'epochs': 80, 'patience': 15, 'min_delta': 0.0, 'grad_clip': None, 'class_balance': False, 'split': 'RANDOM', 'split_sizes': [0.8, 0.1, 0.1], 'split_key_molecule': 0, 'num_replicates': 1, 'num_folds': None, 'save_smiles_splits': False, 'save_data_splits': False, 'splits_file': PosixPath('/home/michael/data/D-MPNN_training/run3/dmpnn/splits_chemprop.json'), 'data_seed': 0, 'pytorch_seed': None}
+2026-09-24T19:31:47 - WARNING:chemprop.cli.train - The following arguments are ignored when making the message passing layer because it is initialized from a foundation model:
+`--message-hidden-dim [300]`
+`--message-bias False`
+`--depth [3]`
+`--undirected False`
+`--dropout 0.0`
+`--activation RELU`
+`--aggregation norm`
+`--aggregation-norm 100`
+`--atom-messages False`
+2026-09-24T19:31:47 - INFO:chemprop.cli.train - Pulling data from file(s): [PosixPath('/home/michael/data/D-MPNN_training/run3/dmpnn/train.csv')]
+2026-09-24T19:31:48 - INFO:chemprop.cli.train - train/val/test split_0 sizes: [17031, 1445, 1445]
+2026-09-24T19:31:48 - INFO:chemprop.cli.train - 
+      Summary of Training Data       
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃       Statistic ┃ Value (entropy) ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│     Num. smiles │           17031 │
+│    Num. targets │           17031 │
+│        Num. NaN │               0 │
+│            Mean │             658 │
+│       Std. dev. │             203 │
+│          Median │             631 │
+│ % within 1 s.d. │             74% │
+│ % within 2 s.d. │             96% │
+└─────────────────┴─────────────────┘
+
+2026-09-24T19:31:48 - INFO:chemprop.cli.train - 
+     Summary of Validation Data      
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃       Statistic ┃ Value (entropy) ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│     Num. smiles │            1445 │
+│    Num. targets │            1445 │
+│        Num. NaN │               0 │
+│            Mean │             760 │
+│       Std. dev. │             195 │
+│          Median │             761 │
+│ % within 1 s.d. │             71% │
+│ % within 2 s.d. │             96% │
+└─────────────────┴─────────────────┘
+
+2026-09-24T19:31:48 - INFO:chemprop.cli.train - 
+        Summary of Test Data         
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃       Statistic ┃ Value (entropy) ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│     Num. smiles │            1445 │
+│    Num. targets │            1445 │
+│        Num. NaN │               0 │
+│            Mean │             765 │
+│       Std. dev. │             184 │
+│          Median │             757 │
+│ % within 1 s.d. │             75% │
+│ % within 2 s.d. │             95% │
+└─────────────────┴─────────────────┘
+
+2026-09-24T19:31:48 - INFO:chemprop.cli.train - Train data: mean = [658.02175416] | std = [203.33683679]
+2026-09-24T19:31:48 - INFO:chemprop.cli.train - Caching training and validation datasets...
+2026-09-24T19:31:51 - INFO:chemprop.cli.train - Loading cached CheMeleon from /home/michael/.chemprop/chemeleon_mp.pt
+2026-09-24T19:31:51 - INFO:chemprop.cli.train - Please cite DOI: 10.48550/arXiv.2506.15792 when using CheMeleon in published work
+2026-09-24T19:31:51 - INFO:chemprop.cli.train - No loss function was specified! Using class default: <class 'chemprop.nn.metrics.MSE'>
+2026-09-24T19:31:51 - INFO:chemprop.cli.train - MPNN(
+  (message_passing): BondMessagePassing(
+    (W_i): Linear(in_features=86, out_features=2048, bias=False)
+    (W_h): Linear(in_features=2048, out_features=2048, bias=False)
+    (W_o): Linear(in_features=2120, out_features=2048, bias=True)
+    (dropout): Dropout(p=0.0, inplace=False)
+    (tau): ReLU()
+    (V_d_transform): Identity()
+    (graph_transform): Identity()
+  )
+  (agg): MeanAggregation()
+  (bn): Identity()
+  (predictor): RegressionFFN(
+    (ffn): MLP(
+      (0): Sequential(
+        (0): Linear(in_features=2048, out_features=300, bias=True)
+      )
+      (1): Sequential(
+        (0): ReLU()
+        (1): Dropout(p=0.0, inplace=False)
+        (2): Linear(in_features=300, out_features=1, bias=True)
+      )
+    )
+    (criterion): MSE(task_weights=[[1.0]])
+    (output_transform): UnscaleTransform()
+  )
+  (X_d_transform): Identity()
+  (metrics): ModuleList(
+    (0): R2Score()
+    (1): MAE(task_weights=[[1.0]])
+    (2): RMSE(task_weights=[[1.0]])
+    (3): MSE(task_weights=[[1.0]])
+  )
+)
+2026-09-24T19:31:51 - WARNING:chemprop.cli.train - Unable to import TensorBoardLogger, reverting to CSVLogger (original error: Neither `tensorboard` nor `tensorboardX` is available. Try `pip install`ing either.
+Requirement 'tensorboardX' not met. HINT: Try running `pip install -U 'tensorboardX'`
+Requirement 'tensorboard' not met. HINT: Try running `pip install -U 'tensorboard'`).
+2026-09-24T19:41:06 - INFO:chemprop.cli.train - Test Set results:
+2026-09-24T19:41:06 - INFO:chemprop.cli.train - test/r2: 0.9414611696044208
+2026-09-24T19:41:06 - INFO:chemprop.cli.train - test/mae: 22.432680130004883
+2026-09-24T19:41:06 - INFO:chemprop.cli.train - test/rmse: 44.55319595336914
+2026-09-24T19:41:06 - INFO:chemprop.cli.train - Best model saved to '/home/michael/data/D-MPNN_training/run3/dmpnn/model_0/best.pt'

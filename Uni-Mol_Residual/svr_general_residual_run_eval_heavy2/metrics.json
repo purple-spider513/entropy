@@ -1,0 +1,97 @@
+{
+  "model": "/home/michael/data/unimol_training/final_unimol_test_run/svr_general_residual_run_heavy",
+  "sets": [
+    {
+      "set": "hybrid_std128",
+      "n_rows": 128,
+      "excluded_overlap": 1,
+      "svr": {
+        "n": 127,
+        "mae": 10.0513,
+        "rmse": 12.7675,
+        "r2": 0.9444,
+        "bias": 5.7154
+      },
+      "hybrid": {
+        "n": 127,
+        "mae": 8.2159,
+        "rmse": 10.438,
+        "r2": 0.9629,
+        "bias": 1.61
+      }
+    },
+    {
+      "set": "hybrid_std109",
+      "n_rows": 109,
+      "excluded_overlap": 0,
+      "svr": {
+        "n": 109,
+        "mae": 13.8055,
+        "rmse": 18.1969,
+        "r2": 0.851,
+        "bias": 10.4669
+      },
+      "hybrid": {
+        "n": 109,
+        "mae": 11.5285,
+        "rmse": 15.3388,
+        "r2": 0.8942,
+        "bias": 7.4923
+      }
+    },
+    {
+      "set": "hybrid_pdbbind",
+      "n_rows": 311,
+      "excluded_overlap": 0,
+      "svr": {
+        "n": 311,
+        "mae": 14.3036,
+        "rmse": 18.624,
+        "r2": 0.9924,
+        "bias": 2.6218
+      },
+      "hybrid": {
+        "n": 311,
+        "mae": 11.6038,
+        "rmse": 16.1753,
+        "r2": 0.9942,
+        "bias": -0.4828
+      }
+    },
+    {
+      "set": "hybrid_std6074",
+      "n_rows": 6074,
+      "excluded_overlap": 4,
+      "svr": {
+        "n": 6070,
+        "mae": 12.7855,
+        "rmse": 17.0191,
+        "r2": 0.9396,
+        "bias": 1.367
+      },
+      "hybrid": {
+        "n": 6070,
+        "mae": 12.7632,
+        "rmse": 17.3819,
+        "r2": 0.937,
+        "bias": -1.5385
+      }
+    }
+  ],
+  "combined": {
+    "svr": {
+      "n": 6617,
+      "mae": 12.8212,
+      "rmse": 17.0468,
+      "r2": 0.9736,
+      "bias": 1.6594
+    },
+    "hybrid": {
+      "n": 6617,
+      "mae": 12.6011,
+      "rmse": 17.1878,
+      "r2": 0.9732,
+      "bias": -1.2797
+    }
+  }
+}

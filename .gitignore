@@ -1,0 +1,5 @@
+Uni-Mol_Residual/svr_general_residual_run_heavy/unimol/model_0.pth
+Uni-Mol_Residual/svr_residual_bondfeat_std6074_80_10_10/unimol/model_0.pth
+Uni-Mol_Residual/svr_general_residual_run_bond/unimol/model_0.pth
+__pycache__/
+*.pyc

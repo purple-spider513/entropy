@@ -1,0 +1,40 @@
+{
+  "model": "/home/michael/data/unimol_training/final_unimol_test_run/svr_general_residual_run_heavy",
+  "sets": [
+    {
+      "set": "all_test_v2_grp4_11_100k",
+      "n_rows": 100001,
+      "excluded_overlap": 0,
+      "svr": {
+        "n": 100001,
+        "mae": 764.76,
+        "rmse": 766.7473,
+        "r2": 0.0,
+        "bias": 764.76
+      },
+      "hybrid": {
+        "n": 100001,
+        "mae": 766.255,
+        "rmse": 768.469,
+        "r2": 0.0,
+        "bias": 766.255
+      }
+    }
+  ],
+  "combined": {
+    "svr": {
+      "n": 100001,
+      "mae": 764.76,
+      "rmse": 766.7473,
+      "r2": 0.0,
+      "bias": 764.76
+    },
+    "hybrid": {
+      "n": 100001,
+      "mae": 766.255,
+      "rmse": 768.469,
+      "r2": 0.0,
+      "bias": 766.255
+    }
+  }
+}

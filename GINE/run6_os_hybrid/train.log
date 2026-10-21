@@ -1,0 +1,60 @@
+device cuda:2 (NVIDIA GeForce RTX 4060 Ti)
+built 1000 SMILES graphs
+built 2000 SMILES graphs
+built 3000 SMILES graphs
+built 4000 SMILES graphs
+built 5000 SMILES graphs
+built 6000 SMILES graphs
+built 7000 SMILES graphs
+built 8000 SMILES graphs
+built 9000 SMILES graphs
+built 10000 SMILES graphs
+built 11000 SMILES graphs
+built 12000 SMILES graphs
+built 13000 SMILES graphs
+built 14000 SMILES graphs
+oversampled train rows 11567 -> 16563 (<12 x5: 530, 12-15 x3: 1438, >15 x1: 9599)
+training gnn_only: ModelConfig(mode='gnn', architecture='gine', hidden_channels=128, num_layers=3, dropout=0.0, use_distance_features=False, tabular_hidden=256, tabular_out=128, attentive_timesteps=2)
+gnn_only epoch 1 train_loss=0.5590 dev_pearson=0.9865 dev_mae=32.659
+gnn_only epoch 10 train_loss=0.0152 dev_pearson=0.9955 dev_mae=16.208
+gnn_only epoch 20 train_loss=0.0113 dev_pearson=0.9956 dev_mae=17.205
+gnn_only epoch 30 train_loss=0.0078 dev_pearson=0.9955 dev_mae=17.570
+gnn_only epoch 40 train_loss=0.0060 dev_pearson=0.9963 dev_mae=12.104
+gnn_only epoch 50 train_loss=0.0058 dev_pearson=0.9962 dev_mae=12.947
+gnn_only epoch 60 train_loss=0.0049 dev_pearson=0.9959 dev_mae=13.842
+gnn_only epoch 70 train_loss=0.0036 dev_pearson=0.9960 dev_mae=12.564
+gnn_only epoch 80 train_loss=0.0029 dev_pearson=0.9962 dev_mae=11.858
+gnn_only development metrics: r2=0.9929  pearson=0.9965  mae=11.640  rmse=16.311
+training hybrid: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=5, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2)
+hybrid epoch 1 train_loss=1.2117 dev_pearson=0.9917 dev_mae=43.850
+hybrid epoch 10 train_loss=0.0071 dev_pearson=0.9967 dev_mae=11.614
+hybrid epoch 20 train_loss=0.0066 dev_pearson=0.9967 dev_mae=11.258
+hybrid epoch 30 train_loss=0.0038 dev_pearson=0.9969 dev_mae=11.246
+hybrid epoch 40 train_loss=0.0025 dev_pearson=0.9968 dev_mae=11.260
+hybrid epoch 50 train_loss=0.0012 dev_pearson=0.9969 dev_mae=11.157
+hybrid epoch 60 train_loss=0.0009 dev_pearson=0.9970 dev_mae=10.632
+hybrid development metrics: r2=0.9939  pearson=0.9971  mae=11.067  rmse=15.189
+  gnn_only train r2=0.9946  pearson=0.9974  mae=10.197  rmse=14.152
+  gnn_only dev r2=0.9929  pearson=0.9965  mae=11.640  rmse=16.311
+  gnn_only test r2=0.9914  pearson=0.9958  mae=11.972  rmse=18.094
+  hybrid train r2=0.9978  pearson=0.9990  mae=6.715  rmse=9.029
+  hybrid dev r2=0.9939  pearson=0.9971  mae=11.067  rmse=15.189
+  hybrid test r2=0.9916  pearson=0.9959  mae=10.827  rmse=17.864
+selected hybrid / hybrid
+evaluating gnn_only on std109
+  gnn_only/std109  n=109/109  overlap=0  r2=0.3748  pearson=0.9167  mae=22.223  rmse=37.281
+evaluating gnn_only on std128
+  gnn_only/std128  n=127/128  overlap=1  r2=0.9010  pearson=0.9617  mae=13.198  rmse=17.040
+evaluating gnn_only on std6074
+  gnn_only/std6074  n=6069/6074  overlap=5  r2=0.9241  pearson=0.9644  mae=14.062  rmse=19.089
+evaluating gnn_only on pdbbind
+  gnn_only/pdbbind  n=311/311  overlap=0  r2=0.9901  pearson=0.9954  mae=15.771  rmse=21.164
+evaluating hybrid on std109
+  hybrid/std109  n=109/109  overlap=0  r2=0.8555  pearson=0.9547  mae=13.864  rmse=17.923
+evaluating hybrid on std128
+  hybrid/std128  n=127/128  overlap=1  r2=0.9557  pearson=0.9813  mae=8.637  rmse=11.397
+evaluating hybrid on std6074
+  hybrid/std6074  n=6069/6074  overlap=5  r2=0.8589  pearson=0.9380  mae=17.649  rmse=26.020
+evaluating hybrid on pdbbind
+  hybrid/pdbbind  n=311/311  overlap=0  r2=0.9773  pearson=0.9886  mae=19.982  rmse=32.089
+{"gnn_only": {"std109": "n=109/109  overlap=0  r2=0.3748  pearson=0.9167  mae=22.223  rmse=37.281", "std128": "n=127/128  overlap=1  r2=0.9010  pearson=0.9617  mae=13.198  rmse=17.040", "std6074": "n=6069/6074  overlap=5  r2=0.9241  pearson=0.9644  mae=14.062  rmse=19.089", "pdbbind": "n=311/311  overlap=0  r2=0.9901  pearson=0.9954  mae=15.771  rmse=21.164"}, "hybrid": {"std109": "n=109/109  overlap=0  r2=0.8555  pearson=0.9547  mae=13.864  rmse=17.923", "std128": "n=127/128  overlap=1  r2=0.9557  pearson=0.9813  mae=8.637  rmse=11.397", "std6074": "n=6069/6074  overlap=5  r2=0.8589  pearson=0.9380  mae=17.649  rmse=26.020", "pdbbind": "n=311/311  overlap=0  r2=0.9773  pearson=0.9886  mae=19.982  rmse=32.089"}}

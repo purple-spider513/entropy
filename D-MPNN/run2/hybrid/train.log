@@ -1,0 +1,170 @@
+2026-09-23T18:12:39 - INFO:chemprop.cli.main - Running in mode 'train' with args: {'smiles_columns': None, 'reaction_columns': None, 'no_header_row': False, 'num_workers': 4, 'batch_size': 64, 'accelerator': 'gpu', 'devices': '1', 'rxn_mode': 'REAC_DIFF', 'multi_hot_atom_featurizer_mode': 'V2', 'keep_h': False, 'add_h': False, 'ignore_stereo': False, 'reorder_atoms': False, 'molecule_featurizers': None, 'descriptors_path': PosixPath('/home/michael/data/D-MPNN_training/run2/hybrid/descriptors.npz'), 'descriptors_columns': None, 'no_descriptor_scaling': False, 'no_atom_feature_scaling': False, 'no_atom_descriptor_scaling': False, 'no_bond_feature_scaling': False, 'no_bond_descriptor_scaling': False, 'atom_features_path': None, 'atom_descriptors_path': None, 'bond_features_path': None, 'bond_descriptors_path': None, 'constraints_path': None, 'constraints_to_targets': None, 'use_cuikmolmaker_featurization': False, 'config_path': None, 'data_path': [PosixPath('/home/michael/data/D-MPNN_training/run2/hybrid/train.csv')], 'output_dir': PosixPath('/home/michael/data/D-MPNN_training/run2/hybrid'), 'remove_checkpoints': False, 'checkpoint': None, 'freeze_encoder': False, 'model_frzn': None, 'frzn_ffn_layers': 0, 'from_foundation': 'CheMeleon', 'ensemble_size': 1, 'message_hidden_dim': [300], 'message_bias': False, 'depth': [3], 'undirected': False, 'dropout': 0.1, 'mpn_shared': False, 'aggregation': 'norm', 'aggregation_norm': 100, 'atom_messages': False, 'activation': 'RELU', 'activation_args': None, 'ffn_hidden_dim': [1024], 'ffn_num_layers': 3, 'batch_norm': False, 'multiclass_num_classes': 3, 'atom_task_weights': None, 'atom_ffn_hidden_dim': [300], 'atom_ffn_num_layers': 1, 'atom_multiclass_num_classes': 3, 'bond_task_weights': None, 'bond_ffn_hidden_dim': [300], 'bond_ffn_num_layers': 1, 'bond_multiclass_num_classes': 3, 'atom_constrainer_ffn_hidden_dim': [300], 'atom_constrainer_ffn_num_layers': 1, 'bond_constrainer_ffn_hidden_dim': [300], 'bond_constrainer_ffn_num_layers': 1, 'weight_column': None, 'target_columns': ['entropy'], 'mol_target_columns': None, 'atom_target_columns': None, 'bond_target_columns': None, 'ignore_columns': None, 'no_cache': False, 'splits_column': None, 'task_type': 'regression', 'loss_function': None, 'v_kl': 0.0, 'eps': 1e-08, 'alpha': 0.1, 'metrics': ['r2', 'mae', 'rmse'], 'tracking_metric': 'val_loss', 'show_individual_scores': False, 'task_weights': None, 'warmup_epochs': 4, 'init_lr': 1e-05, 'max_lr': 0.0001, 'final_lr': 1e-05, 'epochs': 80, 'patience': 15, 'min_delta': 0.0, 'grad_clip': None, 'class_balance': False, 'split': 'RANDOM', 'split_sizes': [0.8, 0.1, 0.1], 'split_key_molecule': 0, 'num_replicates': 1, 'num_folds': None, 'save_smiles_splits': False, 'save_data_splits': False, 'splits_file': PosixPath('/home/michael/data/D-MPNN_training/run2/hybrid/splits.json'), 'data_seed': 0, 'pytorch_seed': None}
+2026-09-23T18:12:39 - WARNING:chemprop.cli.train - The following arguments are ignored when making the message passing layer because it is initialized from a foundation model:
+`--message-hidden-dim [300]`
+`--message-bias False`
+`--depth [3]`
+`--undirected False`
+`--dropout 0.1`
+`--activation RELU`
+`--aggregation norm`
+`--aggregation-norm 100`
+`--atom-messages False`
+2026-09-23T18:12:39 - INFO:chemprop.cli.train - Pulling data from file(s): [PosixPath('/home/michael/data/D-MPNN_training/run2/hybrid/train.csv')]
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - train/val/test split_0 sizes: [11569, 1445, 1445]
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - 
+      Summary of Training Data       
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃       Statistic ┃ Value (entropy) ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│     Num. smiles │           11569 │
+│    Num. targets │           11569 │
+│        Num. NaN │               0 │
+│            Mean │             741 │
+│       Std. dev. │             194 │
+│          Median │             739 │
+│ % within 1 s.d. │             72% │
+│ % within 2 s.d. │             96% │
+└─────────────────┴─────────────────┘
+
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - 
+     Summary of Validation Data      
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃       Statistic ┃ Value (entropy) ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│     Num. smiles │            1445 │
+│    Num. targets │            1445 │
+│        Num. NaN │               0 │
+│            Mean │             760 │
+│       Std. dev. │             195 │
+│          Median │             761 │
+│ % within 1 s.d. │             71% │
+│ % within 2 s.d. │             96% │
+└─────────────────┴─────────────────┘
+
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - 
+        Summary of Test Data         
+┏━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃       Statistic ┃ Value (entropy) ┃
+┡━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│     Num. smiles │            1445 │
+│    Num. targets │            1445 │
+│        Num. NaN │               0 │
+│            Mean │             765 │
+│       Std. dev. │             184 │
+│          Median │             757 │
+│ % within 1 s.d. │             75% │
+│ % within 2 s.d. │             95% │
+└─────────────────┴─────────────────┘
+
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - Descriptors: loc = [2.813e+00 2.472e+01 1.266e+01 3.607e+02 2.593e-04 7.209e-02 5.168e-01
+ 1.615e+00 1.235e+01 3.043e+00 9.854e-03 1.321e-01 4.339e-01 2.032e+01
+ 1.487e-02 4.339e-02 1.795e-01 1.532e-01 8.514e-02 7.983e-01 7.112e-01
+ 1.025e+00 2.045e+00 8.243e-01 1.832e-02 5.273e-03 9.750e-02 4.144e-01
+ 1.729e-03 1.272e-01 8.644e-05 3.025e-03 7.779e-04 1.753e+01 2.996e+00
+ 2.888e+00 6.440e-01 8.644e-05 1.729e-04 5.186e-04 1.210e-03 4.581e-03
+ 5.039e-02 1.590e-02 2.365e-01 1.687e-01 2.531e-01 1.409e-02 1.729e-03
+ 1.729e-04 1.459e-01 4.305e-02 8.168e-02 8.644e-05 1.210e-02 5.359e-03
+ 1.657e-01 2.057e-02 8.644e-05 7.088e-03 4.927e-03 7.779e-04 2.288e-01
+ 1.200e+00 1.036e-01 4.841e-03 3.371e-03 4.191e-01 1.729e-04 8.644e-05
+ 1.109e-01 4.322e-04 9.358e-01 3.890e-03 2.801e-02 1.059e+00 2.539e-01
+ 1.357e-02 5.273e-03 7.010e-02 1.124e-03 8.644e-05 9.438e+00 3.914e-01
+ 8.851e-02 3.731e-01 1.682e+01 1.176e-02 9.785e-02 2.649e-01 2.098e-01
+ 8.546e-01 1.690e-01 1.552e+00 7.282e-01 9.680e-01 5.964e-03 6.778e-01
+ 3.112e-03 1.380e-01 1.729e-04 2.680e-03 2.939e-03 2.581e+00 3.700e-02
+ 5.731e-02 1.619e+00 2.939e-03 8.644e-05 5.359e-03 2.420e-03 3.432e-02
+ 1.031e+00 1.572e-01 1.107e-01 1.393e-01 4.322e-04 1.628e-01 6.708e-02
+ 8.644e-05 1.660e-02 3.458e-04 8.644e-05 1.988e-03 2.757e-02 4.607e-02
+ 7.503e-02 1.250e-01 5.065e-01 4.356e-02 2.673e-01 2.896e-02 2.234e-01
+ 8.644e-05 1.902e-03 2.593e-04 8.298e-03 1.357e-02 4.322e-04 3.803e-03
+ 1.055e-02 1.297e-02 5.186e-04 8.644e-05 1.469e-03 1.297e-03 4.581e-03
+ 1.815e-03 1.616e-02 3.112e-03 5.186e-04 4.322e-04 1.729e-04 8.644e-05
+ 7.105e-02 8.644e-05 8.903e-03 6.051e-04 1.729e-03 6.396e-03 5.186e-04
+ 4.408e-03 1.952e-01 8.298e-03 1.928e-02 1.729e-04 3.458e-04 6.742e-03
+ 2.593e-04 2.047e-01 8.825e-02 7.779e-04 2.680e-03 5.273e-03 1.634e-02
+ 2.939e-03 3.630e-03 7.779e-04 1.729e-03 2.548e-01 8.644e-05 6.051e-03
+ 3.458e-04 1.029e-02 1.124e-03 1.729e-04 3.976e-03 8.644e-05 2.593e-04
+ 2.593e-04 1.729e-04 4.322e-04 2.060e+01], scale = [1.442e+00 9.050e+00 6.088e+00 1.288e+02 2.079e-02 2.720e-01 1.004e+00
+ 1.420e+00 6.479e+00 5.728e+00 1.080e-01 4.148e-01 9.879e-01 8.791e+00
+ 1.326e-01 2.108e-01 4.728e-01 4.529e-01 3.254e-01 9.228e-01 1.446e+00
+ 1.325e+00 1.598e+00 1.190e+00 2.007e-01 8.351e-02 3.177e-01 6.091e-01
+ 4.154e-02 3.768e-01 9.297e-03 5.492e-02 2.788e-02 7.088e+00 1.777e+00
+ 1.966e+00 7.266e-01 9.297e-03 1.859e-02 4.158e-02 3.477e-02 7.127e-02
+ 2.303e-01 1.285e-01 5.796e-01 4.504e-01 5.428e-01 1.264e-01 4.357e-02
+ 1.315e-02 4.124e-01 2.101e-01 4.164e-01 9.297e-03 1.093e-01 7.648e-02
+ 4.644e-01 1.525e-01 9.297e-03 8.389e-02 7.928e-02 2.788e-02 6.709e-01
+ 1.170e+00 3.963e-01 7.651e-02 6.887e-02 8.721e-01 1.315e-02 9.297e-03
+ 3.389e-01 2.459e-02 1.141e+00 6.225e-02 2.073e-01 1.030e+00 5.459e-01
+ 1.838e-01 7.361e-02 2.978e-01 3.832e-02 9.297e-03 6.268e+00 8.964e-01
+ 3.465e-01 9.349e-01 8.320e+00 1.206e-01 3.657e-01 8.980e-01 8.415e-01
+ 1.145e+00 4.874e-01 2.239e+00 1.424e+00 1.522e+00 1.228e-01 1.079e+00
+ 7.772e-02 4.555e-01 1.859e-02 6.634e-02 1.060e-01 5.280e+00 2.255e-01
+ 2.971e-01 3.248e+00 5.413e-02 9.297e-03 8.298e-02 5.087e-02 2.199e-01
+ 2.107e+00 5.108e-01 4.616e-01 5.238e-01 3.083e-02 5.824e-01 2.553e-01
+ 9.297e-03 1.496e-01 1.859e-02 9.297e-03 7.607e-02 2.931e-01 3.022e-01
+ 4.130e-01 5.398e-01 7.887e-01 2.243e-01 6.575e-01 1.853e-01 6.316e-01
+ 9.297e-03 5.089e-02 1.610e-02 9.536e-02 1.201e-01 2.078e-02 6.563e-02
+ 1.038e-01 1.139e-01 3.220e-02 9.297e-03 3.831e-02 3.831e-02 6.753e-02
+ 5.003e-02 1.295e-01 6.017e-02 2.277e-02 2.459e-02 1.315e-02 9.297e-03
+ 2.813e-01 9.297e-03 9.394e-02 2.459e-02 4.154e-02 8.395e-02 2.940e-02
+ 6.881e-02 5.841e-01 9.071e-02 1.518e-01 1.315e-02 1.859e-02 8.794e-02
+ 1.610e-02 5.348e-01 4.247e-01 3.083e-02 5.649e-02 8.034e-02 1.347e-01
+ 6.951e-02 7.312e-02 3.083e-02 4.154e-02 7.550e-01 9.297e-03 1.098e-01
+ 2.277e-02 2.002e-01 4.830e-02 1.859e-02 1.226e-01 9.297e-03 1.610e-02
+ 1.610e-02 1.859e-02 2.459e-02 1.987e+01]
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - Train data: mean = [740.52897967] | std = [193.88547641]
+2026-09-23T18:12:40 - INFO:chemprop.cli.train - Caching training and validation datasets...
+2026-09-23T18:12:42 - INFO:chemprop.cli.train - Loading cached CheMeleon from /home/michael/.chemprop/chemeleon_mp.pt
+2026-09-23T18:12:42 - INFO:chemprop.cli.train - Please cite DOI: 10.48550/arXiv.2506.15792 when using CheMeleon in published work
+2026-09-23T18:12:42 - INFO:chemprop.cli.train - No loss function was specified! Using class default: <class 'chemprop.nn.metrics.MSE'>
+2026-09-23T18:12:42 - INFO:chemprop.cli.train - MPNN(
+  (message_passing): BondMessagePassing(
+    (W_i): Linear(in_features=86, out_features=2048, bias=False)
+    (W_h): Linear(in_features=2048, out_features=2048, bias=False)
+    (W_o): Linear(in_features=2120, out_features=2048, bias=True)
+    (dropout): Dropout(p=0.0, inplace=False)
+    (tau): ReLU()
+    (V_d_transform): Identity()
+    (graph_transform): Identity()
+  )
+  (agg): MeanAggregation()
+  (bn): Identity()
+  (predictor): RegressionFFN(
+    (ffn): MLP(
+      (0): Sequential(
+        (0): Linear(in_features=2241, out_features=1024, bias=True)
+      )
+      (1): Sequential(
+        (0): ReLU()
+        (1): Dropout(p=0.1, inplace=False)
+        (2): Linear(in_features=1024, out_features=1024, bias=True)
+      )
+      (2): Sequential(
+        (0): ReLU()
+        (1): Dropout(p=0.1, inplace=False)
+        (2): Linear(in_features=1024, out_features=1024, bias=True)
+      )
+      (3): Sequential(
+        (0): ReLU()
+        (1): Dropout(p=0.1, inplace=False)
+        (2): Linear(in_features=1024, out_features=1, bias=True)
+      )
+    )
+    (criterion): MSE(task_weights=[[1.0]])
+    (output_transform): UnscaleTransform()
+  )
+  (X_d_transform): ScaleTransform()
+  (metrics): ModuleList(
+    (0): R2Score()
+    (1): MAE(task_weights=[[1.0]])
+    (2): RMSE(task_weights=[[1.0]])
+    (3): MSE(task_weights=[[1.0]])
+  )
+)
+2026-09-23T18:12:42 - WARNING:chemprop.cli.train - Unable to import TensorBoardLogger, reverting to CSVLogger (original error: Neither `tensorboard` nor `tensorboardX` is available. Try `pip install`ing either.
+Requirement 'tensorboardX' not met. HINT: Try running `pip install -U 'tensorboardX'`
+Requirement 'tensorboard' not met. HINT: Try running `pip install -U 'tensorboard'`).
+2026-09-23T18:23:06 - INFO:chemprop.cli.train - Test Set results:
+2026-09-23T18:23:06 - INFO:chemprop.cli.train - test/r2: 0.9922352693174208
+2026-09-23T18:23:06 - INFO:chemprop.cli.train - test/mae: 10.577742576599121
+2026-09-23T18:23:06 - INFO:chemprop.cli.train - test/rmse: 16.226320266723633
+2026-09-23T18:23:07 - INFO:chemprop.cli.train - Best model saved to '/home/michael/data/D-MPNN_training/run2/hybrid/model_0/best.pt'

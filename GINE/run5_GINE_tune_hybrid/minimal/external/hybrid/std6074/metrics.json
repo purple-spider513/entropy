@@ -1,0 +1,20 @@
+{
+  "checkpoint_mode": "fused",
+  "entropy_scale_applied": 1.0,
+  "failed_rows": 0,
+  "mae": 17.8886,
+  "metric_rows": 6069,
+  "metrics_including_overlap": {
+    "mae": 17.8827,
+    "pearson": 0.93267,
+    "r2": 0.846717,
+    "rmse": 27.1107
+  },
+  "overlap_excluded": true,
+  "overlap_rows": 5,
+  "pearson": 0.932657,
+  "r2": 0.846703,
+  "rmse": 27.1197,
+  "successful_rows": 6074,
+  "total_rows": 6074
+}

@@ -1,0 +1,246 @@
+built 1000 SMILES graphs
+built 2000 SMILES graphs
+built 3000 SMILES graphs
+built 4000 SMILES graphs
+built 5000 SMILES graphs
+built 6000 SMILES graphs
+built 7000 SMILES graphs
+built 8000 SMILES graphs
+built 9000 SMILES graphs
+built 10000 SMILES graphs
+built 11000 SMILES graphs
+built 12000 SMILES graphs
+built 13000 SMILES graphs
+built 14000 SMILES graphs
+writing dataset cache to /home/michael/data/GNN_091126/run5/cache/4f0c551281606d5d02fc.pt
+prepared 14459 SMILES graphs; predictors=289, constant=96, retained=289
+training gnn_only: ModelConfig(mode='gnn', architecture='gine', hidden_channels=128, num_layers=4, dropout=0.1, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_only epoch 1 train_loss=1.3335 dev_pearson=0.9759 dev_mae=33.424
+gnn_only epoch 10 train_loss=0.0289 dev_pearson=0.9945 dev_mae=20.907
+gnn_only epoch 20 train_loss=0.0233 dev_pearson=0.9953 dev_mae=23.525
+gnn_only epoch 30 train_loss=0.0191 dev_pearson=0.9939 dev_mae=27.298
+gnn_only epoch 40 train_loss=0.0143 dev_pearson=0.9956 dev_mae=19.466
+gnn_only epoch 50 train_loss=0.0108 dev_pearson=0.9951 dev_mae=18.532
+gnn_only epoch 60 train_loss=0.0123 dev_pearson=0.9958 dev_mae=23.040
+gnn_only epoch 70 train_loss=0.0091 dev_pearson=0.9960 dev_mae=21.095
+gnn_only epoch 80 train_loss=0.0087 dev_pearson=0.9959 dev_mae=21.252
+gnn_only epoch 90 train_loss=0.0079 dev_pearson=0.9963 dev_mae=19.597
+gnn_only epoch 100 train_loss=0.0072 dev_pearson=0.9963 dev_mae=21.442
+gnn_only epoch 110 train_loss=0.0071 dev_pearson=0.9964 dev_mae=20.651
+gnn_only epoch 120 train_loss=0.0067 dev_pearson=0.9964 dev_mae=21.815
+gnn_only epoch 130 train_loss=0.0064 dev_pearson=0.9964 dev_mae=21.411
+gnn_only epoch 140 train_loss=0.0064 dev_pearson=0.9964 dev_mae=21.438
+gnn_only development metrics: r2=0.9777  pearson=0.9965  mae=21.493  rmse=28.979
+training hybrid: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=4, dropout=0.1, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+hybrid epoch 1 train_loss=2.8104 dev_pearson=0.9852 dev_mae=24.600
+hybrid epoch 10 train_loss=0.0192 dev_pearson=0.9955 dev_mae=17.545
+hybrid epoch 20 train_loss=0.0144 dev_pearson=0.9962 dev_mae=16.513
+hybrid epoch 30 train_loss=0.0120 dev_pearson=0.9960 dev_mae=28.668
+hybrid epoch 40 train_loss=0.0083 dev_pearson=0.9960 dev_mae=24.499
+hybrid epoch 50 train_loss=0.0049 dev_pearson=0.9966 dev_mae=19.261
+hybrid epoch 60 train_loss=0.0039 dev_pearson=0.9969 dev_mae=25.358
+hybrid epoch 70 train_loss=0.0033 dev_pearson=0.9970 dev_mae=25.613
+hybrid epoch 80 train_loss=0.0033 dev_pearson=0.9969 dev_mae=24.921
+hybrid epoch 90 train_loss=0.0027 dev_pearson=0.9970 dev_mae=25.360
+hybrid epoch 100 train_loss=0.0025 dev_pearson=0.9971 dev_mae=23.961
+hybrid epoch 110 train_loss=0.0024 dev_pearson=0.9970 dev_mae=25.321
+hybrid epoch 120 train_loss=0.0024 dev_pearson=0.9971 dev_mae=25.245
+hybrid epoch 130 train_loss=0.0024 dev_pearson=0.9971 dev_mae=25.138
+hybrid epoch 140 train_loss=0.0023 dev_pearson=0.9971 dev_mae=25.483
+hybrid development metrics: r2=0.9698  pearson=0.9971  mae=24.691  rmse=33.664
+training gnn_h128_l3_d0_xyz1: ModelConfig(mode='gnn', architecture='gine', hidden_channels=128, num_layers=3, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h128_l3_d0_xyz1 epoch 1 train_loss=0.9320 dev_pearson=0.9825 dev_mae=78.736
+gnn_h128_l3_d0_xyz1 epoch 10 train_loss=0.0161 dev_pearson=0.9951 dev_mae=17.133
+gnn_h128_l3_d0_xyz1 epoch 20 train_loss=0.0145 dev_pearson=0.9952 dev_mae=13.536
+gnn_h128_l3_d0_xyz1 epoch 30 train_loss=0.0117 dev_pearson=0.9930 dev_mae=22.878
+gnn_h128_l3_d0_xyz1 epoch 40 train_loss=0.0099 dev_pearson=0.9952 dev_mae=17.116
+gnn_h128_l3_d0_xyz1 epoch 50 train_loss=0.0067 dev_pearson=0.9961 dev_mae=11.994
+gnn_h128_l3_d0_xyz1 epoch 60 train_loss=0.0054 dev_pearson=0.9963 dev_mae=12.152
+gnn_h128_l3_d0_xyz1 epoch 70 train_loss=0.0051 dev_pearson=0.9961 dev_mae=11.918
+gnn_h128_l3_d0_xyz1 epoch 80 train_loss=0.0042 dev_pearson=0.9960 dev_mae=11.981
+gnn_h128_l3_d0_xyz1 epoch 90 train_loss=0.0036 dev_pearson=0.9960 dev_mae=11.801
+gnn_h128_l3_d0_xyz1 development metrics: r2=0.9918  pearson=0.9963  mae=12.519  rmse=17.556
+training gnn_h128_l3_d0_xyz0: ModelConfig(mode='gnn', architecture='gine', hidden_channels=128, num_layers=3, dropout=0.0, use_distance_features=False, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h128_l3_d0_xyz0 epoch 1 train_loss=1.1465 dev_pearson=0.9892 dev_mae=51.465
+gnn_h128_l3_d0_xyz0 epoch 10 train_loss=0.0187 dev_pearson=0.9957 dev_mae=22.246
+gnn_h128_l3_d0_xyz0 epoch 20 train_loss=0.0144 dev_pearson=0.9958 dev_mae=18.637
+gnn_h128_l3_d0_xyz0 epoch 30 train_loss=0.0105 dev_pearson=0.9927 dev_mae=24.225
+gnn_h128_l3_d0_xyz0 epoch 40 train_loss=0.0113 dev_pearson=0.9953 dev_mae=16.810
+gnn_h128_l3_d0_xyz0 epoch 50 train_loss=0.0079 dev_pearson=0.9959 dev_mae=12.684
+gnn_h128_l3_d0_xyz0 epoch 60 train_loss=0.0062 dev_pearson=0.9964 dev_mae=11.601
+gnn_h128_l3_d0_xyz0 epoch 70 train_loss=0.0052 dev_pearson=0.9965 dev_mae=11.734
+gnn_h128_l3_d0_xyz0 epoch 80 train_loss=0.0048 dev_pearson=0.9960 dev_mae=13.433
+gnn_h128_l3_d0_xyz0 epoch 90 train_loss=0.0042 dev_pearson=0.9963 dev_mae=11.584
+gnn_h128_l3_d0_xyz0 epoch 100 train_loss=0.0039 dev_pearson=0.9963 dev_mae=11.617
+gnn_h128_l3_d0_xyz0 development metrics: r2=0.9931  pearson=0.9966  mae=11.370  rmse=16.113
+training gnn_h128_l4_d0_xyz1: ModelConfig(mode='gnn', architecture='gine', hidden_channels=128, num_layers=4, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h128_l4_d0_xyz1 epoch 1 train_loss=0.7264 dev_pearson=0.9827 dev_mae=42.803
+gnn_h128_l4_d0_xyz1 epoch 10 train_loss=0.0202 dev_pearson=0.9946 dev_mae=26.935
+gnn_h128_l4_d0_xyz1 epoch 20 train_loss=0.0159 dev_pearson=0.9954 dev_mae=16.141
+gnn_h128_l4_d0_xyz1 epoch 30 train_loss=0.0122 dev_pearson=0.9951 dev_mae=15.622
+gnn_h128_l4_d0_xyz1 epoch 40 train_loss=0.0145 dev_pearson=0.9953 dev_mae=15.477
+gnn_h128_l4_d0_xyz1 epoch 50 train_loss=0.0085 dev_pearson=0.9953 dev_mae=13.750
+gnn_h128_l4_d0_xyz1 epoch 60 train_loss=0.0062 dev_pearson=0.9963 dev_mae=11.833
+gnn_h128_l4_d0_xyz1 epoch 70 train_loss=0.0061 dev_pearson=0.9962 dev_mae=11.764
+gnn_h128_l4_d0_xyz1 epoch 80 train_loss=0.0043 dev_pearson=0.9961 dev_mae=12.680
+gnn_h128_l4_d0_xyz1 epoch 90 train_loss=0.0034 dev_pearson=0.9961 dev_mae=11.844
+gnn_h128_l4_d0_xyz1 development metrics: r2=0.9927  pearson=0.9964  mae=11.775  rmse=16.599
+training gnn_h128_l5_d0_xyz1: ModelConfig(mode='gnn', architecture='gine', hidden_channels=128, num_layers=5, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h128_l5_d0_xyz1 epoch 1 train_loss=2.8811 dev_pearson=0.9627 dev_mae=40.064
+gnn_h128_l5_d0_xyz1 epoch 10 train_loss=0.0201 dev_pearson=0.9945 dev_mae=23.661
+gnn_h128_l5_d0_xyz1 epoch 20 train_loss=0.0166 dev_pearson=0.9956 dev_mae=13.522
+gnn_h128_l5_d0_xyz1 epoch 30 train_loss=0.0119 dev_pearson=0.9935 dev_mae=23.318
+gnn_h128_l5_d0_xyz1 epoch 40 train_loss=0.0164 dev_pearson=0.9953 dev_mae=16.449
+gnn_h128_l5_d0_xyz1 epoch 50 train_loss=0.0088 dev_pearson=0.9958 dev_mae=21.438
+gnn_h128_l5_d0_xyz1 epoch 60 train_loss=0.0065 dev_pearson=0.9962 dev_mae=11.919
+gnn_h128_l5_d0_xyz1 epoch 70 train_loss=0.0064 dev_pearson=0.9958 dev_mae=12.776
+gnn_h128_l5_d0_xyz1 epoch 80 train_loss=0.0047 dev_pearson=0.9962 dev_mae=12.254
+gnn_h128_l5_d0_xyz1 epoch 90 train_loss=0.0037 dev_pearson=0.9963 dev_mae=11.850
+gnn_h128_l5_d0_xyz1 epoch 100 train_loss=0.0031 dev_pearson=0.9961 dev_mae=11.952
+gnn_h128_l5_d0_xyz1 development metrics: r2=0.9928  pearson=0.9964  mae=11.844  rmse=16.485
+training gnn_h256_l3_d0_xyz1: ModelConfig(mode='gnn', architecture='gine', hidden_channels=256, num_layers=3, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h256_l3_d0_xyz1 epoch 1 train_loss=2.7385 dev_pearson=0.9852 dev_mae=47.538
+gnn_h256_l3_d0_xyz1 epoch 10 train_loss=0.0207 dev_pearson=0.9942 dev_mae=17.795
+gnn_h256_l3_d0_xyz1 epoch 20 train_loss=0.0159 dev_pearson=0.9954 dev_mae=14.535
+gnn_h256_l3_d0_xyz1 epoch 30 train_loss=0.0115 dev_pearson=0.9943 dev_mae=20.482
+gnn_h256_l3_d0_xyz1 epoch 40 train_loss=0.0101 dev_pearson=0.9959 dev_mae=12.577
+gnn_h256_l3_d0_xyz1 epoch 50 train_loss=0.0093 dev_pearson=0.9955 dev_mae=15.062
+gnn_h256_l3_d0_xyz1 epoch 60 train_loss=0.0077 dev_pearson=0.9962 dev_mae=11.859
+gnn_h256_l3_d0_xyz1 epoch 70 train_loss=0.0062 dev_pearson=0.9964 dev_mae=12.247
+gnn_h256_l3_d0_xyz1 epoch 80 train_loss=0.0057 dev_pearson=0.9963 dev_mae=14.517
+gnn_h256_l3_d0_xyz1 epoch 90 train_loss=0.0045 dev_pearson=0.9964 dev_mae=11.897
+gnn_h256_l3_d0_xyz1 epoch 100 train_loss=0.0040 dev_pearson=0.9964 dev_mae=11.788
+gnn_h256_l3_d0_xyz1 epoch 110 train_loss=0.0036 dev_pearson=0.9964 dev_mae=11.544
+gnn_h256_l3_d0_xyz1 epoch 120 train_loss=0.0035 dev_pearson=0.9965 dev_mae=11.516
+gnn_h256_l3_d0_xyz1 development metrics: r2=0.9927  pearson=0.9965  mae=11.813  rmse=16.616
+training gnn_h256_l4_d0_xyz1: ModelConfig(mode='gnn', architecture='gine', hidden_channels=256, num_layers=4, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h256_l4_d0_xyz1 epoch 1 train_loss=4.3449 dev_pearson=0.9871 dev_mae=51.836
+gnn_h256_l4_d0_xyz1 epoch 10 train_loss=0.0187 dev_pearson=0.9958 dev_mae=16.337
+gnn_h256_l4_d0_xyz1 epoch 20 train_loss=0.0155 dev_pearson=0.9955 dev_mae=13.740
+gnn_h256_l4_d0_xyz1 epoch 30 train_loss=0.0102 dev_pearson=0.9946 dev_mae=14.620
+gnn_h256_l4_d0_xyz1 epoch 40 train_loss=0.0082 dev_pearson=0.9961 dev_mae=15.356
+gnn_h256_l4_d0_xyz1 epoch 50 train_loss=0.0066 dev_pearson=0.9961 dev_mae=12.582
+gnn_h256_l4_d0_xyz1 epoch 60 train_loss=0.0065 dev_pearson=0.9962 dev_mae=11.770
+gnn_h256_l4_d0_xyz1 epoch 70 train_loss=0.0051 dev_pearson=0.9965 dev_mae=11.735
+gnn_h256_l4_d0_xyz1 epoch 80 train_loss=0.0041 dev_pearson=0.9963 dev_mae=12.361
+gnn_h256_l4_d0_xyz1 epoch 90 train_loss=0.0037 dev_pearson=0.9962 dev_mae=11.839
+gnn_h256_l4_d0_xyz1 epoch 100 train_loss=0.0033 dev_pearson=0.9962 dev_mae=11.846
+gnn_h256_l4_d0_xyz1 development metrics: r2=0.9927  pearson=0.9965  mae=11.735  rmse=16.512
+training gnn_h256_l5_d0_xyz1: ModelConfig(mode='gnn', architecture='gine', hidden_channels=256, num_layers=5, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gnn_h256_l5_d0_xyz1 epoch 1 train_loss=4.5358 dev_pearson=0.9873 dev_mae=24.570
+gnn_h256_l5_d0_xyz1 epoch 10 train_loss=0.0218 dev_pearson=0.9955 dev_mae=13.710
+gnn_h256_l5_d0_xyz1 epoch 20 train_loss=0.0148 dev_pearson=0.9953 dev_mae=18.525
+gnn_h256_l5_d0_xyz1 epoch 30 train_loss=0.0104 dev_pearson=0.9945 dev_mae=15.561
+gnn_h256_l5_d0_xyz1 epoch 40 train_loss=0.0083 dev_pearson=0.9959 dev_mae=12.390
+gnn_h256_l5_d0_xyz1 epoch 50 train_loss=0.0069 dev_pearson=0.9961 dev_mae=12.626
+gnn_h256_l5_d0_xyz1 epoch 60 train_loss=0.0056 dev_pearson=0.9964 dev_mae=11.999
+gnn_h256_l5_d0_xyz1 epoch 70 train_loss=0.0053 dev_pearson=0.9963 dev_mae=12.350
+gnn_h256_l5_d0_xyz1 epoch 80 train_loss=0.0042 dev_pearson=0.9963 dev_mae=12.341
+gnn_h256_l5_d0_xyz1 epoch 90 train_loss=0.0036 dev_pearson=0.9964 dev_mae=11.863
+gnn_h256_l5_d0_xyz1 development metrics: r2=0.9925  pearson=0.9965  mae=12.147  rmse=16.736
+training gine_h128_l1_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=1, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h128_l1_d0_xyz1 epoch 1 train_loss=0.4675 dev_pearson=0.9908 dev_mae=21.941
+gine_h128_l1_d0_xyz1 epoch 10 train_loss=0.0081 dev_pearson=0.9964 dev_mae=13.450
+gine_h128_l1_d0_xyz1 epoch 20 train_loss=0.0082 dev_pearson=0.9966 dev_mae=11.321
+gine_h128_l1_d0_xyz1 epoch 30 train_loss=0.0040 dev_pearson=0.9967 dev_mae=11.259
+gine_h128_l1_d0_xyz1 epoch 40 train_loss=0.0026 dev_pearson=0.9968 dev_mae=10.893
+gine_h128_l1_d0_xyz1 epoch 50 train_loss=0.0017 dev_pearson=0.9968 dev_mae=10.851
+gine_h128_l1_d0_xyz1 epoch 60 train_loss=0.0013 dev_pearson=0.9968 dev_mae=11.053
+gine_h128_l1_d0_xyz1 development metrics: r2=0.9940  pearson=0.9970  mae=10.511  rmse=15.035
+training gine_h128_l3_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=3, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h128_l3_d0_xyz1 epoch 1 train_loss=1.1574 dev_pearson=0.9895 dev_mae=20.454
+gine_h128_l3_d0_xyz1 epoch 10 train_loss=0.0093 dev_pearson=0.9969 dev_mae=10.991
+gine_h128_l3_d0_xyz1 epoch 20 train_loss=0.0083 dev_pearson=0.9962 dev_mae=13.521
+gine_h128_l3_d0_xyz1 epoch 30 train_loss=0.0045 dev_pearson=0.9966 dev_mae=11.715
+gine_h128_l3_d0_xyz1 epoch 40 train_loss=0.0027 dev_pearson=0.9970 dev_mae=12.331
+gine_h128_l3_d0_xyz1 epoch 50 train_loss=0.0018 dev_pearson=0.9971 dev_mae=10.596
+gine_h128_l3_d0_xyz1 epoch 60 train_loss=0.0013 dev_pearson=0.9971 dev_mae=10.501
+gine_h128_l3_d0_xyz1 development metrics: r2=0.9943  pearson=0.9972  mae=10.517  rmse=14.692
+training gine_h128_l4_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=4, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h128_l4_d0_xyz1 epoch 1 train_loss=2.3664 dev_pearson=0.9874 dev_mae=23.753
+gine_h128_l4_d0_xyz1 epoch 10 train_loss=0.0099 dev_pearson=0.9966 dev_mae=12.114
+gine_h128_l4_d0_xyz1 epoch 20 train_loss=0.0100 dev_pearson=0.9961 dev_mae=12.976
+gine_h128_l4_d0_xyz1 epoch 30 train_loss=0.0043 dev_pearson=0.9968 dev_mae=12.032
+gine_h128_l4_d0_xyz1 epoch 40 train_loss=0.0032 dev_pearson=0.9969 dev_mae=12.681
+gine_h128_l4_d0_xyz1 epoch 50 train_loss=0.0019 dev_pearson=0.9971 dev_mae=10.541
+gine_h128_l4_d0_xyz1 epoch 60 train_loss=0.0013 dev_pearson=0.9970 dev_mae=10.419
+gine_h128_l4_d0_xyz1 development metrics: r2=0.9919  pearson=0.9972  mae=13.216  rmse=17.482
+training gine_h128_l5_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=5, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h128_l5_d0_xyz1 epoch 1 train_loss=3.4299 dev_pearson=0.9877 dev_mae=25.620
+gine_h128_l5_d0_xyz1 epoch 10 train_loss=0.0096 dev_pearson=0.9967 dev_mae=12.125
+gine_h128_l5_d0_xyz1 epoch 20 train_loss=0.0053 dev_pearson=0.9972 dev_mae=11.692
+gine_h128_l5_d0_xyz1 epoch 30 train_loss=0.0046 dev_pearson=0.9969 dev_mae=10.805
+gine_h128_l5_d0_xyz1 epoch 40 train_loss=0.0035 dev_pearson=0.9968 dev_mae=11.878
+gine_h128_l5_d0_xyz1 epoch 50 train_loss=0.0019 dev_pearson=0.9971 dev_mae=11.657
+gine_h128_l5_d0_xyz1 epoch 60 train_loss=0.0014 dev_pearson=0.9970 dev_mae=10.662
+gine_h128_l5_d0_xyz1 development metrics: r2=0.9942  pearson=0.9972  mae=10.349  rmse=14.771
+training gine_h256_l1_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=256, num_layers=1, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h256_l1_d0_xyz1 epoch 1 train_loss=0.3559 dev_pearson=0.9919 dev_mae=21.976
+gine_h256_l1_d0_xyz1 epoch 10 train_loss=0.0092 dev_pearson=0.9962 dev_mae=13.586
+gine_h256_l1_d0_xyz1 epoch 20 train_loss=0.0100 dev_pearson=0.9961 dev_mae=12.196
+gine_h256_l1_d0_xyz1 epoch 30 train_loss=0.0040 dev_pearson=0.9967 dev_mae=12.116
+gine_h256_l1_d0_xyz1 epoch 40 train_loss=0.0039 dev_pearson=0.9963 dev_mae=16.640
+gine_h256_l1_d0_xyz1 epoch 50 train_loss=0.0021 dev_pearson=0.9968 dev_mae=10.944
+gine_h256_l1_d0_xyz1 epoch 60 train_loss=0.0015 dev_pearson=0.9966 dev_mae=11.075
+gine_h256_l1_d0_xyz1 development metrics: r2=0.9889  pearson=0.9968  mae=15.035  rmse=20.447
+training gine_h256_l3_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=256, num_layers=3, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h256_l3_d0_xyz1 epoch 1 train_loss=1.3301 dev_pearson=0.9913 dev_mae=28.340
+gine_h256_l3_d0_xyz1 epoch 10 train_loss=0.0123 dev_pearson=0.9965 dev_mae=11.824
+gine_h256_l3_d0_xyz1 epoch 20 train_loss=0.0104 dev_pearson=0.9955 dev_mae=15.799
+gine_h256_l3_d0_xyz1 epoch 30 train_loss=0.0046 dev_pearson=0.9966 dev_mae=13.547
+gine_h256_l3_d0_xyz1 epoch 40 train_loss=0.0033 dev_pearson=0.9968 dev_mae=11.003
+gine_h256_l3_d0_xyz1 epoch 50 train_loss=0.0021 dev_pearson=0.9971 dev_mae=11.015
+gine_h256_l3_d0_xyz1 epoch 60 train_loss=0.0016 dev_pearson=0.9970 dev_mae=10.991
+gine_h256_l3_d0_xyz1 development metrics: r2=0.9944  pearson=0.9972  mae=10.280  rmse=14.541
+training gine_h256_l4_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=256, num_layers=4, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h256_l4_d0_xyz1 epoch 1 train_loss=3.4732 dev_pearson=0.9915 dev_mae=37.720
+gine_h256_l4_d0_xyz1 epoch 10 train_loss=0.0122 dev_pearson=0.9965 dev_mae=20.191
+gine_h256_l4_d0_xyz1 epoch 20 train_loss=0.0115 dev_pearson=0.9963 dev_mae=15.681
+gine_h256_l4_d0_xyz1 epoch 30 train_loss=0.0045 dev_pearson=0.9971 dev_mae=11.859
+gine_h256_l4_d0_xyz1 epoch 40 train_loss=0.0063 dev_pearson=0.9961 dev_mae=22.749
+gine_h256_l4_d0_xyz1 epoch 50 train_loss=0.0028 dev_pearson=0.9970 dev_mae=10.908
+gine_h256_l4_d0_xyz1 epoch 60 train_loss=0.0020 dev_pearson=0.9970 dev_mae=11.215
+gine_h256_l4_d0_xyz1 epoch 70 train_loss=0.0016 dev_pearson=0.9971 dev_mae=10.507
+gine_h256_l4_d0_xyz1 epoch 80 train_loss=0.0012 dev_pearson=0.9970 dev_mae=10.508
+gine_h256_l4_d0_xyz1 development metrics: r2=0.9942  pearson=0.9971  mae=10.263  rmse=14.758
+training gine_h256_l5_d0_xyz1: ModelConfig(mode='fused', architecture='gine', hidden_channels=256, num_layers=5, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.001
+gine_h256_l5_d0_xyz1 epoch 1 train_loss=5.1925 dev_pearson=0.9886 dev_mae=23.876
+gine_h256_l5_d0_xyz1 epoch 10 train_loss=0.0136 dev_pearson=0.9967 dev_mae=14.148
+gine_h256_l5_d0_xyz1 epoch 20 train_loss=0.0106 dev_pearson=0.9964 dev_mae=12.138
+gine_h256_l5_d0_xyz1 epoch 30 train_loss=0.0045 dev_pearson=0.9968 dev_mae=11.109
+gine_h256_l5_d0_xyz1 epoch 40 train_loss=0.0041 dev_pearson=0.9967 dev_mae=12.430
+gine_h256_l5_d0_xyz1 epoch 50 train_loss=0.0023 dev_pearson=0.9970 dev_mae=10.955
+gine_h256_l5_d0_xyz1 epoch 60 train_loss=0.0017 dev_pearson=0.9970 dev_mae=10.562
+gine_h256_l5_d0_xyz1 epoch 70 train_loss=0.0014 dev_pearson=0.9970 dev_mae=10.636
+gine_h256_l5_d0_xyz1 development metrics: r2=0.9943  pearson=0.9972  mae=10.437  rmse=14.639
+training gine_h128_l3_d0_xyz1_lr3e4: ModelConfig(mode='fused', architecture='gine', hidden_channels=128, num_layers=3, dropout=0.0, use_distance_features=True, tabular_hidden=256, tabular_out=128, attentive_timesteps=2) monitor=pearson loss=mse lr=0.0003
+gine_h128_l3_d0_xyz1_lr3e4 epoch 1 train_loss=0.2497 dev_pearson=0.9869 dev_mae=23.862
+gine_h128_l3_d0_xyz1_lr3e4 epoch 10 train_loss=0.0089 dev_pearson=0.9964 dev_mae=12.521
+gine_h128_l3_d0_xyz1_lr3e4 epoch 20 train_loss=0.0078 dev_pearson=0.9960 dev_mae=12.443
+gine_h128_l3_d0_xyz1_lr3e4 epoch 30 train_loss=0.0033 dev_pearson=0.9966 dev_mae=11.703
+gine_h128_l3_d0_xyz1_lr3e4 epoch 40 train_loss=0.0021 dev_pearson=0.9968 dev_mae=10.794
+gine_h128_l3_d0_xyz1_lr3e4 epoch 50 train_loss=0.0014 dev_pearson=0.9969 dev_mae=10.784
+gine_h128_l3_d0_xyz1_lr3e4 development metrics: r2=0.9932  pearson=0.9970  mae=11.460  rmse=15.931
+selected hybrid / gine_h128_l5_d0_xyz1 (accepted)
+  train r2=0.9975  pearson=0.9990  mae=6.922  rmse=9.563
+  dev   r2=0.9942  pearson=0.9972  mae=10.350  rmse=14.771
+  test  r2=0.9909  pearson=0.9957  mae=10.825  rmse=18.605
+mode winners:
+  gnn_only       gnn_h128_l3_d0_xyz0  test r2=0.9915  pearson=0.9958  mae=11.890  rmse=17.946
+  hybrid         gine_h128_l5_d0_xyz1  test r2=0.9909  pearson=0.9957  mae=10.825  rmse=18.605
+evaluating gnn_only on std109
+  gnn_only/std109  n=109/109  overlap=0  r2=0.3197  pearson=0.8951  mae=22.440  rmse=38.888
+evaluating gnn_only on std128
+  gnn_only/std128  n=127/128  overlap=1  r2=0.9283  pearson=0.9711  mae=11.062  rmse=14.501
+evaluating gnn_only on std6074
+  gnn_only/std6074  n=6069/6074  overlap=5  r2=0.9427  pearson=0.9717  mae=12.206  rmse=16.581
+evaluating gnn_only on pdbbind
+  gnn_only/pdbbind  n=311/311  overlap=0  r2=0.9910  pearson=0.9957  mae=15.348  rmse=20.242
+evaluating hybrid on std109
+  hybrid/std109  n=109/109  overlap=0  r2=0.8013  pearson=0.9431  mae=15.616  rmse=21.017
+evaluating hybrid on std128
+  hybrid/std128  n=127/128  overlap=1  r2=0.9419  pearson=0.9794  mae=9.637  rmse=13.053
+evaluating hybrid on std6074
+  hybrid/std6074  n=6069/6074  overlap=5  r2=0.8467  pearson=0.9327  mae=17.889  rmse=27.120
+evaluating hybrid on pdbbind
+  hybrid/pdbbind  n=311/311  overlap=0  r2=0.9746  pearson=0.9880  mae=22.028  rmse=33.921
