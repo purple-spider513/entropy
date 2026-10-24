@@ -1,5 +1,5 @@
 {
-  "model": "/home/michael/data/unimol_training/final_unimol_test_run/svr_general_residual_run_heavy",
+  "model": "/home/m033031/data/unimol_training/final_unimol_test_run/svr_general_residual_run_heavy",
   "sets": [
     {
       "set": "hybrid_std128",
@@ -7,17 +7,17 @@
       "excluded_overlap": 1,
       "svr": {
         "n": 127,
-        "mae": 10.0513,
-        "rmse": 12.7675,
-        "r2": 0.9444,
-        "bias": 5.7154
+        "mae": 9.9346,
+        "rmse": 12.8848,
+        "r2": 0.9434,
+        "bias": 5.5187
       },
       "hybrid": {
         "n": 127,
-        "mae": 8.2159,
-        "rmse": 10.438,
-        "r2": 0.9629,
-        "bias": 1.61
+        "mae": 8.5246,
+        "rmse": 10.8032,
+        "r2": 0.9602,
+        "bias": 1.4132
       }
     },
     {
@@ -81,17 +81,17 @@
   "combined": {
     "svr": {
       "n": 6617,
-      "mae": 12.8212,
-      "rmse": 17.0468,
+      "mae": 12.819,
+      "rmse": 17.0484,
       "r2": 0.9736,
-      "bias": 1.6594
+      "bias": 1.6556
     },
     "hybrid": {
       "n": 6617,
-      "mae": 12.6011,
-      "rmse": 17.1878,
-      "r2": 0.9732,
-      "bias": -1.2797
+      "mae": 12.607,
+      "rmse": 17.1921,
+      "r2": 0.9731,
+      "bias": -1.2834
     }
   }
 }

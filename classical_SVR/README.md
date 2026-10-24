@@ -23,7 +23,7 @@ Support-vector regression with an RBF kernel (`C=10000`, `epsilon=0.1`, no featu
 ## Usage
 
 ```bash
-cd SVR_general
+cd classical_SVR
 python SVR_predS_bond.py
 ```
 

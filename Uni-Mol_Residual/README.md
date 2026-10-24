@@ -13,7 +13,7 @@ The SVR is an unscaled RBF model (`C=10000`, `epsilon=0.1`). Uni-Mol v2 (84m) is
 | `svr_general_residual_run_bond/` | Model that uses the 256 features in the top-level `selected_features` file. |
 | `svr_general_residual_run_heavy/` | Model that uses all 289 descriptor columns. |
 | `svr_general_residual_run_eval_bond2/`, `svr_general_residual_run_eval_heavy2/` | Predictions of the two models above on the four external sets. |
-| `rate_evaluation/` | Predictions for 10k to 500k molecules. The `Entropy` column is all zeros in these files, so their metrics are not meaningful. Use `Predicted_Entropy`. |
+| `predict_rate/` | Predictions of the bond model (`svr_general_residual_run_bond`) for 10k, 50k, 100k, 200k and 500k molecules, one `*_preds` folder per size with a `metrics.json`. The `Entropy` column is all zeros in these files, so their metrics are not meaningful. Use `Predicted_Entropy`. |
 | `svr_residual_bondfeat_std6074_80_10_10/` | Model trained and tested on an 80/10/10 split of `hybrid_std6074.csv`. Includes `calc_metrics.py`, which computes R², MAE, RMSE, Pearson r and MRE from a CSV with `obs` and `pred` columns, and `bin.py`, which bins the deviations in `test.dat`. |
 
 Each model folder contains `tabular.joblib` (the SVR), `unimol/` (the Uni-Mol checkpoint), `config.json`, the split files and the predictions.

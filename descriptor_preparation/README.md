@@ -15,7 +15,7 @@ Builds the count-based descriptors used by the SVR and hybrid models from mol2 s
 | `gene_entropy_input_bond_v2.py` | Counts bond types per ligand. Writes `train_bond_v2_mw300.csv`. |
 | `gene_entropy_input_elements_v3.py` | Sums atom types into element totals. Writes `train_element_v2_mw300.csv`. |
 | `merge_train_v3.py` | Joins the three tables into one training table, `all_train_v2_mw300.csv`. |
-| `count_rotational_conformations_v3.py` | Optional. Counts rotational conformers with RDKit. Not used by the four scripts above. |
+| `count_rotational_conformations_v3.py` | Optional. Counts rotational conformers with RDKit as a product of rotor factors, with no per-molecule overrides. Not used by the four scripts above. |
 | `mw300_conformer` | Conformer count per ligand, the output of the conformer script. |
 | `failed_info` | Log of molecules the conformer script could not process. Only a header row here, so nothing failed. |
 | `train_*_mw300.csv`, `all_train_v2_mw300.csv` | Outputs of the pipeline, 854 rows each. |

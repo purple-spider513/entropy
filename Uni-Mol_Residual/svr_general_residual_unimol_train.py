@@ -8,7 +8,7 @@ oversampling:
   n_heavy < 12 -> 5 copies, 12 <= n_heavy <= 15 -> 3 copies, n_heavy > 15 -> 1 copy.
 SVR itself is fit on the unique training rows.
 
-SVR is the unscaled RBF bond-feature model from SVR_general/SVR_predS_bond.py
+SVR is the unscaled RBF bond-feature model from classical_SVR/SVR_predS_bond.py
 (C=10000, epsilon=0.1).
 Uni-Mol v2 84m learns the residual from SMILES. Helper routines are copied
 here so this script does not import train.py.

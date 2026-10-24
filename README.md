@@ -8,7 +8,7 @@ Code, data, and trained models for predicting the gas-phase entropy of small mol
 .
 ├── hybrid_data/             Training and external test CSV files
 ├── descriptor_preparation/  Builds atom, bond and element count tables from mol2 files
-├── SVR_general/             Support-vector regression baselines
+├── classical_SVR/           Support-vector regression baselines
 ├── D-MPNN/                  Chemprop D-MPNN models (SMILES only, and SMILES plus descriptors)
 ├── GINE/                    GINE graph neural network models
 ├── Uni-Mol_train/           SVR stacked on a Uni-Mol prediction
@@ -23,7 +23,7 @@ Each folder has its own README that lists its files and shows how to run them.
 - `hybrid_data/hybrid_train_091926.csv`: main training set, 14,459 molecules. Columns are `ID`, `SMILES`, `entropy` (the target) and 289 descriptor columns.
 - `hybrid_data/hybrid_pdbbind.csv`, `hybrid_std109.csv`, `hybrid_std128.csv` and `hybrid_std6074.csv`: external test sets with 311, 109, 128 and 6,074 molecules.
 
-`SVR_general/`, `D-MPNN/hybrid_data/` and `GINE/hybrid_data/` hold copies of `hybrid_train_091926.csv` and the four external sets, so that each model folder can run on its own.
+`classical_SVR/`, `D-MPNN/hybrid_data/` and `GINE/hybrid_data/` hold copies of `hybrid_train_091926.csv` and the four external sets, so that each model folder can run on its own.
 
 ## Trained Uni-Mol checkpoints
 
@@ -35,7 +35,7 @@ The three Uni-Mol checkpoints are about 334 MB each, too large for this reposito
 | `svr_general_residual_run_heavy_model_0.pth` | `Uni-Mol_Residual/svr_general_residual_run_heavy/unimol/model_0.pth` |
 | `svr_residual_bondfeat_std6074_80_10_10_model_0.pth` | `Uni-Mol_Residual/svr_residual_bondfeat_std6074_80_10_10/unimol/model_0.pth` |
 
-The D-MPNN checkpoints and the Uni-Mol prediction file (`Uni-Mol_Residual/rate_evaluation/svr_general_residual_run_heavy_500k_preds/hybrid_test_500k_preds.csv`) are included in the repository, and are between 50 and 100 MB each.
+The D-MPNN checkpoints and the Uni-Mol prediction file (`Uni-Mol_Residual/predict_rate/svr_general_residual_run_bond_500k_preds/hybrid_test_500k_preds.csv`) are included in the repository, and are between 50 and 100 MB each.
 
 ## Before running
 

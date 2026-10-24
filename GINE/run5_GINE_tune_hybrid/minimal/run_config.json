@@ -1,26 +1,26 @@
 {
   "always_tune": true,
   "batch_size": 64,
-  "cache_dir": "/home/michael/data/GNN_091126/run5/cache",
-  "csv": "/home/michael/data/GNN_091126/hybrid_data/hybrid_train_091926.csv",
+  "cache_dir": "/home/m033031/data/GNN_091126/run5/cache",
+  "csv": "/home/m033031/data/GNN_091126/hybrid_data/hybrid_train_091926.csv",
   "device": "cuda:2",
   "embed_3d": true,
   "eval_csv": [
     [
       "std109",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_std109.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_std109.csv"
     ],
     [
       "std128",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_std128.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_std128.csv"
     ],
     [
       "std6074",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_std6074.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_std6074.csv"
     ],
     [
       "pdbbind",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_pdbbind.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_pdbbind.csv"
     ]
   ],
   "expand_on_miss": false,
@@ -31,7 +31,7 @@
   "mae_target": 14.0,
   "max_epochs": 300,
   "min_dev_pearson": -1.0,
-  "output_dir": "/home/michael/data/GNN_091126/run5/minimal",
+  "output_dir": "/home/m033031/data/GNN_091126/run5/minimal",
   "patience": 30,
   "pearson_target": 0.95,
   "sample_limit": 0,

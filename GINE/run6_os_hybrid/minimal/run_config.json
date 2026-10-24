@@ -24,30 +24,30 @@
       "use_distance_features": true
     }
   },
-  "csv": "/home/michael/data/GNN_091126/hybrid_data/hybrid_train_091926.csv",
+  "csv": "/home/m033031/data/GNN_091126/hybrid_data/hybrid_train_091926.csv",
   "device": "cuda:2",
   "embed_3d": true,
   "eval_csv": [
     [
       "std109",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_std109.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_std109.csv"
     ],
     [
       "std128",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_std128.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_std128.csv"
     ],
     [
       "std6074",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_std6074.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_std6074.csv"
     ],
     [
       "pdbbind",
-      "/home/michael/data/GNN_091126/hybrid_data/hybrid_pdbbind.csv"
+      "/home/m033031/data/GNN_091126/hybrid_data/hybrid_pdbbind.csv"
     ]
   ],
   "gpu_index": 2,
   "max_epochs": 300,
-  "output_dir": "/home/michael/data/GNN_091126/run6/minimal",
+  "output_dir": "/home/m033031/data/GNN_091126/run6/minimal",
   "oversampling": "three-segment: heavy<12 x5, 12-15 x3, >15 x1; train split only",
   "patience": 30,
   "seed": 42,

@@ -1,0 +1,40 @@
+{
+  "model": "/home/m033031/data/unimol_training/final_unimol_test_run/svr_general_residual_run_bond",
+  "sets": [
+    {
+      "set": "hybrid_test_50k",
+      "n_rows": 50000,
+      "excluded_overlap": 0,
+      "svr": {
+        "n": 50000,
+        "mae": 762.8756,
+        "rmse": 764.632,
+        "r2": 0.0,
+        "bias": 762.8756
+      },
+      "hybrid": {
+        "n": 50000,
+        "mae": 763.9946,
+        "rmse": 765.9521,
+        "r2": 0.0,
+        "bias": 763.9946
+      }
+    }
+  ],
+  "combined": {
+    "svr": {
+      "n": 50000,
+      "mae": 762.8756,
+      "rmse": 764.632,
+      "r2": 0.0,
+      "bias": 762.8756
+    },
+    "hybrid": {
+      "n": 50000,
+      "mae": 763.9946,
+      "rmse": 765.9521,
+      "r2": 0.0,
+      "bias": 763.9946
+    }
+  }
+}
