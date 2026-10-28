@@ -2,19 +2,19 @@
   "checkpoint_mode": "gnn",
   "entropy_scale_applied": 1.0,
   "failed_rows": 0,
-  "mae": 11.0797,
+  "mae": 11.0767,
   "metric_rows": 127,
   "metrics_including_overlap": {
-    "mae": 11.0201,
-    "pearson": 0.970957,
-    "r2": 0.928276,
-    "rmse": 14.4618
+    "mae": 11.0172,
+    "pearson": 0.97097,
+    "r2": 0.928303,
+    "rmse": 14.4591
   },
   "overlap_excluded": true,
   "overlap_rows": 1,
-  "pearson": 0.971042,
-  "r2": 0.928192,
-  "rmse": 14.5154,
+  "pearson": 0.971055,
+  "r2": 0.928219,
+  "rmse": 14.5126,
   "successful_rows": 128,
   "total_rows": 128
 }

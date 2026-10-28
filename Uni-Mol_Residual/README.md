@@ -45,4 +45,4 @@ python svr_general_residual_unimol_predict.py --model svr_general_residual_run_b
 Notes:
 - `--output` must be a new folder. Training refuses to overwrite an existing model.
 - The default `--gpu` is a GPU ID from the original machine. Pass `--gpu 0` or `--gpu cpu`.
-- Prediction needs the Uni-Mol checkpoints (`unimol/model_0.pth`). See the Large files section of the top-level README.
+- Prediction needs the Uni-Mol checkpoints (`unimol/model_0.pth`). See the [Trained Uni-Mol checkpoints](../README.md#trained-uni-mol-checkpoints) section of the top-level README.

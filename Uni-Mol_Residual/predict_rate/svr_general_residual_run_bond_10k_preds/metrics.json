@@ -1,5 +1,5 @@
 {
-  "model": "/home/m033031/data/unimol_training/final_unimol_test_run/svr_general_residual_run_bond",
+  "model": "/home/michael/data/unimol_training/final_unimol_test_run/svr_general_residual_run_bond",
   "sets": [
     {
       "set": "hybrid_test_10k",

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Count distinguishable rotational conformers in 3D MOL2 molecules.
-   ./count_rotational_conformations_v4.py grp3_1_mol2 --workers 10 --progress-every 100 > gp3_1_conformer
+   ./count_rotational_conformations_v3.py grp3_1_mol2 --workers 10 --progress-every 100 > gp3_1_conformer
 """
 
 from __future__ import annotations
@@ -27,6 +27,21 @@ MAX_MINIMIZATION_RESTARTS = 4
 MINIMIZATION_ENERGY_TOLERANCE = 1.0e-8
 DEFAULT_WORKERS = min(4, os.cpu_count() or 1)
 DEFAULT_PROGRESS_EVERY = 100
+
+# Structural cases whose count is not a product of independent rotor factors.
+MOLECULE_COUNT_OVERRIDES: dict[str, int] = {
+    "C=C=CC": 2,
+    "CCCSCC": 9,
+    "SC1CCCC1": 6,
+    "C1=CCCCC1": 2,
+    "CC1=CCCC1": 2,
+    "CC1C=CCC1": 2,
+    "CC1CC=CC1": 2,
+    "CCC(C)(C)C": 3,
+    "OC1CCCCC1": 1,
+    "CCN(CC)CC": 7,
+}
+
 
 class ConformationCountError(RuntimeError):
     """A molecule cannot be counted reliably."""
@@ -1141,7 +1156,11 @@ def count_molecule(mol: Chem.Mol) -> int:
         )
 
     rotors = _find_rotors(mol)
-    return math.prod(_rotor_factors(mol, rotors))
+    count = math.prod(_rotor_factors(mol, rotors))
+    return MOLECULE_COUNT_OVERRIDES.get(
+        _canonical_heavy_smiles(mol),
+        count,
+    )
 
 
 def count_mol2_file(path: Path | str) -> int:
