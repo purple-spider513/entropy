@@ -1,0 +1,62 @@
+{
+  "kind": "svr_residual_unimol_80_10_10",
+  "feature_set": "all",
+  "train_source": "hybrid_data/hybrid_std6074_102926.csv",
+  "train": "svr_residual_allfeat_std6074_102926_80_10_10/split_train.csv",
+  "output": "svr_residual_allfeat_std6074_102926_80_10_10",
+  "tabular": "svr_residual_allfeat_std6074_102926_80_10_10/tabular.joblib",
+  "unimol": "svr_residual_allfeat_std6074_102926_80_10_10/unimol",
+  "svr_kernel": "rbf",
+  "svr_C": 10000,
+  "svr_epsilon": 0.1,
+  "scaled": false,
+  "epochs": 25,
+  "batch_size": 8,
+  "learning_rate": 5e-05,
+  "model_name": "unimolv2",
+  "model_size": "84m",
+  "target_normalize": "standard",
+  "remove_hs": false,
+  "train_fraction": 0.8,
+  "val_fraction": 0.1,
+  "test_fraction": 0.1,
+  "split_seed": 42,
+  "n_pool": 6074,
+  "n_train": 4859,
+  "n_val": 607,
+  "n_test": 608,
+  "n_features": 289,
+  "n_support": 4812,
+  "n_residual_train": 22399,
+  "n_unique_train_smiles": 4859,
+  "oversample": "n<12 x5, 12<=n<=15 x3, n>15 x1",
+  "val_svr": {
+    "n": 607,
+    "mae": 8.2964,
+    "rmse": 11.0111,
+    "r2": 0.9759,
+    "bias": -0.1029
+  },
+  "test_svr": {
+    "n": 608,
+    "mae": 8.0179,
+    "rmse": 10.7551,
+    "r2": 0.9751,
+    "bias": -0.0559
+  },
+  "val_hybrid": {
+    "n": 607,
+    "mae": 5.1769,
+    "rmse": 7.8092,
+    "r2": 0.9879,
+    "bias": -0.1191
+  },
+  "test_hybrid": {
+    "n": 608,
+    "mae": 4.5224,
+    "rmse": 6.6694,
+    "r2": 0.9904,
+    "bias": -0.0499
+  },
+  "note": "SVR(RBF, C=10000, epsilon=0.1) from SVR_predS_bond.py, unscaled, plus Uni-Mol residual. 80/10/10. 3-segment oversampling on residuals only."
+}

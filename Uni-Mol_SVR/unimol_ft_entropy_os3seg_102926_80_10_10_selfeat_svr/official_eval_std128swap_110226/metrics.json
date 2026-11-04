@@ -1,0 +1,23 @@
+{
+  "sets": [
+    {
+      "set": "hybrid_std128_102926",
+      "csv": "hybrid_data/hybrid_std128_102926.csv",
+      "excluded_overlap": 1,
+      "unimol": {
+        "n": 127,
+        "mae": 10.304,
+        "rmse": 13.8614,
+        "r2": 0.9345,
+        "bias": 8.2377
+      },
+      "unimol_svr": {
+        "n": 127,
+        "mae": 12.304,
+        "rmse": 15.9189,
+        "r2": 0.9136,
+        "bias": 11.3676
+      }
+    }
+  ]
+}

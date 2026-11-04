@@ -1,0 +1,43 @@
+{
+  "always_tune": true,
+  "batch_size": 64,
+  "cache_dir": "run5_102926/cache",
+  "csv": "/home/michael/data/GNN_091126/hybrid_data/hybrid_train_102926.csv",
+  "device": "cuda:0",
+  "embed_3d": true,
+  "eval_csv": [
+    [
+      "std109",
+      "hybrid_data/hybrid_std109_102926.csv"
+    ],
+    [
+      "std128",
+      "hybrid_data/hybrid_std128_102926.csv"
+    ],
+    [
+      "std6074",
+      "hybrid_data/hybrid_std6074_102926.csv"
+    ],
+    [
+      "pdbbind",
+      "hybrid_data/hybrid_pdbbind_102926.csv"
+    ]
+  ],
+  "expand_on_miss": false,
+  "feature_file": "/home/michael/data/GNN_091126/selected_features",
+  "gpu_index": 0,
+  "input_hashes": {
+    "csv": "27b74361d004e0bf46a3375607645dad74ec5894274cfc80e0bc4a5449231940",
+    "feature_file": "17dfa152d9e2ff4bfd1025b164b4a6adeca3f421e3e60a98e12ca9cb6b7b308d"
+  },
+  "mae_target": 14.0,
+  "max_epochs": 300,
+  "min_dev_pearson": -1.0,
+  "n_selected_features": 256,
+  "output_dir": "/home/michael/data/GNN_091126/run5_102926/minimal",
+  "patience": 30,
+  "pearson_target": 0.95,
+  "sample_limit": 0,
+  "seed": 42,
+  "selection_objective": "pearson"
+}

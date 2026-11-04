@@ -1,53 +1,29 @@
-#!/usr/bin/python3
-"""Collapse the atom-type table into per-element counts.
-
-Reads the output of gene_entropy_input_atom_v2.py and sums the SYBYL atom types
-of each element (C.1 + C.2 + ... -> C, N.*, O.*, S.*). Boron support was added
-in v3.
+#!/usr/bin/env python3
+"""
+This script is used to get element composition from all_atom_type.csv
+Input and out files need to be defined.
 """
 
-import argparse
-import csv
-from collections import defaultdict
+import os, re
+fo=open("train_atom_mw300.csv","r")     ####atom-types
+lig_list=fo.readlines()
+out=open("train_element_mw300.csv","w") ####element-types
+out.write("ID,ring,heavy,s_heavy_bond,MW,B,Br,C,Cl,F,Fe,H,I,N,O,P,S,Si,symmetry,entropy\n")
 
-# Elements in the output order.
-ELEMENTS = ["B", "Br", "C", "Cl", "F", "Fe", "H", "I", "N", "O", "P", "S", "Si"]
-LEADING_COLUMNS = ["ID", "ring", "heavy", "s_heavy_bond", "MW"]
-TRAILING_COLUMNS = ["symmetry", "entropy"]
-
-
-def parse_args():
-    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--atom-table", default="train_atom_v2_mw300.csv")
-    parser.add_argument("--output", default="train_element_v2_mw300.csv")
-    return parser.parse_args()
-
-
-def element_of(atom_type):
-    return atom_type.split(".")[0]
-
-
-def main():
-    args = parse_args()
-
-    with open(args.atom_table, newline="") as source, open(args.output, "w") as out:
-        reader = csv.DictReader(source)
-        type_columns = [
-            name for name in reader.fieldnames
-            if name not in LEADING_COLUMNS + TRAILING_COLUMNS
-        ]
-        out.write(",".join(LEADING_COLUMNS + ELEMENTS + TRAILING_COLUMNS) + "\n")
-
-        for row in reader:
-            counts = defaultdict(int)
-            for atom_type in type_columns:
-                counts[element_of(atom_type)] += int(row[atom_type])
-
-            entropy = round(float(row["entropy"]), 3)
-            leading = [row[name] for name in LEADING_COLUMNS]
-            element_counts = [str(counts[element]) for element in ELEMENTS]
-            out.write(",".join(leading + element_counts + [row["symmetry"], str(entropy)]) + "\n")
-
-
-if __name__ == "__main__":
-    main()
+n=0
+for line in lig_list:
+    if n>=1:
+        ln=line.split(",")
+        C=int(ln[7])+int(ln[8])+int(ln[9])+int(ln[10])+int(ln[11])
+        N=int(ln[17])+int(ln[18])+int(ln[19])+int(ln[20])+int(ln[21])+int(ln[22])+int(ln[23])
+        O=int(ln[24])+int(ln[25])+int(ln[26])
+        S=int(ln[28])+int(ln[29])+int(ln[30])+int(ln[31])+int(ln[32])+int(ln[33])
+        ent=float(ln[36])
+        out.write(f"{ln[0]},{ln[1]},{ln[2]},{ln[3]},{ln[4]},{ln[5]},{ln[6]},{C},{ln[12]},{ln[13]},{ln[14]},{ln[15]},{ln[16]},{N},{O},{ln[27]},{S},{ln[34]},{ln[35]},{ent}\n")
+    n+=1
+    if n%100==0:
+        print(f"{n}/{len(lig_list)}")
+print(f"Total {n} ligands are processed!")
+fo.close()
+out.close()
+exit

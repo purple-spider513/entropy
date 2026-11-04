@@ -1,0 +1,4 @@
+molecule_id,input_path,error
+ZINC000002541441,mw300_mol2/ZINC000002541441.mol2,load: ConformationCountError: RDKit could not sanitize mw300_mol2/ZINC000002541441.mol2: Can't kekulize mol.  Unkekulized atoms: 0 1 2 3 4 7 9 12
+ZINC000002599141,mw300_mol2/ZINC000002599141.mol2,load: ConformationCountError: RDKit could not sanitize mw300_mol2/ZINC000002599141.mol2: Can't kekulize mol.  Unkekulized atoms: 0 1 2 3 5 7 11 12
+ZINC000664401414,mw300_mol2/ZINC000664401414.mol2,load: ConformationCountError: RDKit could not sanitize mw300_mol2/ZINC000664401414.mol2: Can't kekulize mol.  Unkekulized atoms: 0 1 3 8 10

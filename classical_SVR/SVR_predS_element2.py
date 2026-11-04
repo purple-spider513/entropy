@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
 
-test_data=pd.read_csv("./hybrid_pdbbind.csv")
-#X_test=test_data[["ring","heavy","s_heavy_bond","MW","B","Br","C","Cl","F","Fe","H","I","N","O","P.3","S","Si","symmetry"]]
-X_test=test_data[["B","Br","C","Cl","F","Fe","H","I","N","O","P.3","S","Si"]]
+test_data=pd.read_csv("./hybrid_pdbbind_102926.csv")
+X_test=test_data[["ring","heavy","s_heavy_bond","MW","B","Br","C","Cl","F","Fe","H","I","N","O","P.3","S","Si","symmetry"]]
+#X_test=test_data[["B","Br","C","Cl","F","Fe","H","I","N","O","P.3","S","Si"]]
 y_test=test_data["entropy"]
 
 from sklearn.svm import SVR
@@ -13,7 +13,7 @@ estimator=SVR(kernel='rbf', C=10000, epsilon=0.1)
 
 import joblib
 #joblib.dump(estimator,"/4T/projects/entropy/SVR_V2/sv_element.pkl")
-estimator=joblib.load("/4T/projects/entropy/SVR_V2/sv_element.pkl")
+estimator=joblib.load("./sv_element.pkl")
 
 data_test=pd.DataFrame(y_test)
 y_pre=estimator.predict(X_test)

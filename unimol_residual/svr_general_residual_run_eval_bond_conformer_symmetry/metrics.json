@@ -1,0 +1,97 @@
+{
+  "model": "/home/michael/data/unimol_training/final_unimol_test_run/svr_general_residual_run_bond_conformer_symmetry",
+  "sets": [
+    {
+      "set": "hybrid_std128_102926",
+      "n_rows": 128,
+      "excluded_overlap": 1,
+      "svr": {
+        "n": 127,
+        "mae": 7.1916,
+        "rmse": 10.0296,
+        "r2": 0.9657,
+        "bias": 0.6245
+      },
+      "hybrid": {
+        "n": 127,
+        "mae": 7.3315,
+        "rmse": 9.533,
+        "r2": 0.969,
+        "bias": -2.6907
+      }
+    },
+    {
+      "set": "hybrid_std109_102926",
+      "n_rows": 109,
+      "excluded_overlap": 2,
+      "svr": {
+        "n": 107,
+        "mae": 8.236,
+        "rmse": 11.4273,
+        "r2": 0.9418,
+        "bias": 3.7119
+      },
+      "hybrid": {
+        "n": 107,
+        "mae": 6.7755,
+        "rmse": 9.041,
+        "r2": 0.9636,
+        "bias": 0.5829
+      }
+    },
+    {
+      "set": "hybrid_pdbbind_102926",
+      "n_rows": 311,
+      "excluded_overlap": 1,
+      "svr": {
+        "n": 310,
+        "mae": 14.3814,
+        "rmse": 18.3287,
+        "r2": 0.9926,
+        "bias": 2.7474
+      },
+      "hybrid": {
+        "n": 310,
+        "mae": 11.5096,
+        "rmse": 16.1652,
+        "r2": 0.9942,
+        "bias": 0.0757
+      }
+    },
+    {
+      "set": "hybrid_std6074_102926",
+      "n_rows": 6074,
+      "excluded_overlap": 12,
+      "svr": {
+        "n": 6062,
+        "mae": 12.4179,
+        "rmse": 16.6771,
+        "r2": 0.9421,
+        "bias": -0.8935
+      },
+      "hybrid": {
+        "n": 6062,
+        "mae": 12.7592,
+        "rmse": 17.365,
+        "r2": 0.9372,
+        "bias": -2.3105
+      }
+    }
+  ],
+  "combined": {
+    "svr": {
+      "n": 6606,
+      "mae": 12.3418,
+      "rmse": 16.5842,
+      "r2": 0.975,
+      "bias": -0.6189
+    },
+    "hybrid": {
+      "n": 6606,
+      "mae": 12.4993,
+      "rmse": 17.0893,
+      "r2": 0.9735,
+      "bias": -2.159
+    }
+  }
+}

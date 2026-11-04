@@ -1,0 +1,144 @@
+{
+  "accepted": true,
+  "diagnostics": {
+    "gnn_only": {
+      "mae": 20.8356,
+      "pearson": 0.995428,
+      "r2": 0.979852,
+      "rmse": 28.6712
+    },
+    "hybrid": {
+      "mae": 23.7079,
+      "pearson": 0.996764,
+      "r2": 0.974815,
+      "rmse": 32.0551
+    }
+  },
+  "mae_target": 14.0,
+  "min_dev_pearson": -1.0,
+  "mode_winners": {
+    "gnn_only": {
+      "candidate": "gnn_h256_l5_d0_xyz1",
+      "dev_metrics": {
+        "mae": 11.9582,
+        "pearson": 0.995738,
+        "r2": 0.991485,
+        "rmse": 18.6385
+      },
+      "model_config": {
+        "architecture": "gine",
+        "attentive_timesteps": 2,
+        "dropout": 0.0,
+        "hidden_channels": 256,
+        "mode": "gnn",
+        "num_layers": 5,
+        "tabular_hidden": 256,
+        "tabular_out": 128,
+        "use_distance_features": true
+      }
+    },
+    "hybrid": {
+      "candidate": "gine_h256_l5_d0_xyz1",
+      "dev_metrics": {
+        "mae": 10.3056,
+        "pearson": 0.996801,
+        "r2": 0.993483,
+        "rmse": 16.3058
+      },
+      "model_config": {
+        "architecture": "gine",
+        "attentive_timesteps": 2,
+        "dropout": 0.0,
+        "hidden_channels": 256,
+        "mode": "fused",
+        "num_layers": 5,
+        "tabular_hidden": 256,
+        "tabular_out": 128,
+        "use_distance_features": true
+      }
+    }
+  },
+  "model_config": {
+    "architecture": "gine",
+    "attentive_timesteps": 2,
+    "dropout": 0.0,
+    "hidden_channels": 256,
+    "mode": "fused",
+    "num_layers": 5,
+    "tabular_hidden": 256,
+    "tabular_out": 128,
+    "use_distance_features": true
+  },
+  "modes": {
+    "gnn_only": {
+      "dev": {
+        "mae": 11.9582,
+        "pearson": 0.995738,
+        "r2": 0.991485,
+        "rmse": 18.6385
+      },
+      "test": {
+        "mae": 11.9997,
+        "pearson": 0.995944,
+        "r2": 0.991765,
+        "rmse": 18.0705
+      },
+      "train": {
+        "mae": 9.8843,
+        "pearson": 0.997745,
+        "r2": 0.995467,
+        "rmse": 13.6201
+      }
+    },
+    "hybrid": {
+      "dev": {
+        "mae": 10.3056,
+        "pearson": 0.996801,
+        "r2": 0.993483,
+        "rmse": 16.3058
+      },
+      "test": {
+        "mae": 10.1316,
+        "pearson": 0.997173,
+        "r2": 0.994323,
+        "rmse": 15.0044
+      },
+      "train": {
+        "mae": 5.9205,
+        "pearson": 0.999266,
+        "r2": 0.998396,
+        "rmse": 8.1025
+      }
+    }
+  },
+  "pearson_target": 0.95,
+  "selected_candidate": "gine_h256_l5_d0_xyz1",
+  "selected_dev_metrics": {
+    "mae": 10.3056,
+    "pearson": 0.996801,
+    "r2": 0.993483,
+    "rmse": 16.3058
+  },
+  "selected_mode": "hybrid",
+  "selection_objective": "pearson",
+  "splits": {
+    "dev": {
+      "mae": 10.3056,
+      "pearson": 0.996801,
+      "r2": 0.993483,
+      "rmse": 16.3058
+    },
+    "test": {
+      "mae": 10.1316,
+      "pearson": 0.997173,
+      "r2": 0.994323,
+      "rmse": 15.0044
+    },
+    "train": {
+      "mae": 5.9205,
+      "pearson": 0.999266,
+      "r2": 0.998396,
+      "rmse": 8.1025
+    }
+  }
+}

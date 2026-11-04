@@ -1,0 +1,21 @@
+{
+  "checkpoint_mode": "gnn",
+  "entropy_scale_applied": 1.0,
+  "failed_rows": 0,
+  "mae": 21.8803,
+  "metric_rows": 107,
+  "metrics_including_overlap": {
+    "mae": 21.7396,
+    "pearson": 0.893265,
+    "r2": 0.349321,
+    "rmse": 38.0329
+  },
+  "n_predictor_columns": 256,
+  "overlap_excluded": true,
+  "overlap_rows": 2,
+  "pearson": 0.894666,
+  "r2": 0.345377,
+  "rmse": 38.3313,
+  "successful_rows": 109,
+  "total_rows": 109
+}

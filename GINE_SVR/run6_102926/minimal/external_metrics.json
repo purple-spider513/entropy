@@ -1,0 +1,174 @@
+{
+  "gnn_only": {
+    "pdbbind": {
+      "checkpoint_mode": "gnn",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 15.9377,
+      "metric_rows": 310,
+      "metrics_including_overlap": {
+        "mae": 15.8898,
+        "pearson": 0.995452,
+        "r2": 0.989173,
+        "rmse": 22.1899
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 1,
+      "pearson": 0.995427,
+      "r2": 0.989113,
+      "rmse": 22.2255,
+      "successful_rows": 311,
+      "total_rows": 311
+    },
+    "std109": {
+      "checkpoint_mode": "gnn",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 22.6776,
+      "metric_rows": 107,
+      "metrics_including_overlap": {
+        "mae": 22.3864,
+        "pearson": 0.892008,
+        "r2": 0.236524,
+        "rmse": 41.1977
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 2,
+      "pearson": 0.892277,
+      "r2": 0.230068,
+      "rmse": 41.5703,
+      "successful_rows": 109,
+      "total_rows": 109
+    },
+    "std128": {
+      "checkpoint_mode": "gnn",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 12.1543,
+      "metric_rows": 127,
+      "metrics_including_overlap": {
+        "mae": 12.0796,
+        "pearson": 0.970161,
+        "r2": 0.91567,
+        "rmse": 15.6812
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 1,
+      "pearson": 0.970172,
+      "r2": 0.915551,
+      "rmse": 15.7411,
+      "successful_rows": 128,
+      "total_rows": 128
+    },
+    "std6074": {
+      "checkpoint_mode": "gnn",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 13.4082,
+      "metric_rows": 6061,
+      "metrics_including_overlap": {
+        "mae": 13.3962,
+        "pearson": 0.967829,
+        "r2": 0.925276,
+        "rmse": 18.9289
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 13,
+      "pearson": 0.967799,
+      "r2": 0.925222,
+      "rmse": 18.9445,
+      "successful_rows": 6074,
+      "total_rows": 6074
+    }
+  },
+  "hybrid": {
+    "pdbbind": {
+      "checkpoint_mode": "fused",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 22.6526,
+      "metric_rows": 310,
+      "metrics_including_overlap": {
+        "mae": 22.5965,
+        "pearson": 0.987063,
+        "r2": 0.973031,
+        "rmse": 35.0208
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 1,
+      "pearson": 0.987004,
+      "r2": 0.972885,
+      "rmse": 35.076,
+      "successful_rows": 311,
+      "total_rows": 311
+    },
+    "std109": {
+      "checkpoint_mode": "fused",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 13.4916,
+      "metric_rows": 107,
+      "metrics_including_overlap": {
+        "mae": 13.4124,
+        "pearson": 0.951305,
+        "r2": 0.787384,
+        "rmse": 21.7407
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 2,
+      "pearson": 0.951781,
+      "r2": 0.786283,
+      "rmse": 21.9017,
+      "successful_rows": 109,
+      "total_rows": 109
+    },
+    "std128": {
+      "checkpoint_mode": "fused",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 8.5863,
+      "metric_rows": 127,
+      "metrics_including_overlap": {
+        "mae": 8.5997,
+        "pearson": 0.978444,
+        "r2": 0.951628,
+        "rmse": 11.8764
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 1,
+      "pearson": 0.978455,
+      "r2": 0.951835,
+      "rmse": 11.888,
+      "successful_rows": 128,
+      "total_rows": 128
+    },
+    "std6074": {
+      "checkpoint_mode": "fused",
+      "entropy_scale_applied": 1.0,
+      "failed_rows": 0,
+      "mae": 17.5346,
+      "metric_rows": 6061,
+      "metrics_including_overlap": {
+        "mae": 17.5116,
+        "pearson": 0.930032,
+        "r2": 0.824873,
+        "rmse": 28.9782
+      },
+      "n_predictor_columns": 256,
+      "overlap_excluded": true,
+      "overlap_rows": 13,
+      "pearson": 0.929952,
+      "r2": 0.824692,
+      "rmse": 29.0066,
+      "successful_rows": 6074,
+      "total_rows": 6074
+    }
+  }
+}

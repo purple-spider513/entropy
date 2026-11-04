@@ -1,0 +1,40 @@
+{
+  "model": "/home/michael/data/unimol_training/final_unimol_test_run/svr_general_residual_run_all_conformer_symmetry",
+  "sets": [
+    {
+      "set": "hybrid_test_200k",
+      "n_rows": 200000,
+      "excluded_overlap": 0,
+      "svr": {
+        "n": 200000,
+        "mae": 762.3209,
+        "rmse": 764.1243,
+        "r2": 0.0,
+        "bias": 762.3209
+      },
+      "hybrid": {
+        "n": 200000,
+        "mae": 763.5215,
+        "rmse": 765.5025,
+        "r2": 0.0,
+        "bias": 763.5215
+      }
+    }
+  ],
+  "combined": {
+    "svr": {
+      "n": 200000,
+      "mae": 762.3209,
+      "rmse": 764.1243,
+      "r2": 0.0,
+      "bias": 762.3209
+    },
+    "hybrid": {
+      "n": 200000,
+      "mae": 763.5215,
+      "rmse": 765.5025,
+      "r2": 0.0,
+      "bias": 763.5215
+    }
+  }
+}

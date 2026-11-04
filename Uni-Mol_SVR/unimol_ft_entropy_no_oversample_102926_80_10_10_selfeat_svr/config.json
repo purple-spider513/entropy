@@ -1,0 +1,39 @@
+{
+  "kind": "unimol_ft_entropy_no_oversample_80_10_10_selfeat_svr",
+  "train_source": "/home/michael/data/unimol_training/testing2/hybrid_data/hybrid_train_102926.csv",
+  "train": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_no_oversample_102926_80_10_10_selfeat_svr/split_train.csv",
+  "output": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_no_oversample_102926_80_10_10_selfeat_svr",
+  "unimol": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_no_oversample_102926_80_10_10_selfeat_svr/unimol",
+  "model": "/home/michael/data/unimol_training/testing2/unimol_ft_entropy_no_oversample_102926_80_10_10_selfeat_svr/svr_unimol_stack.joblib",
+  "feature_file": "/home/michael/data/unimol_training/testing2/selected_features",
+  "n_selected_features": 256,
+  "stack_features": 257,
+  "n_pool": 15546,
+  "n_train": 12436,
+  "n_val": 1555,
+  "n_test": 1555,
+  "n_unimol_rows": 12436,
+  "oversample": false,
+  "oversample_scheme": null,
+  "split_seed": 42,
+  "epochs": 25,
+  "batch_size": 8,
+  "learning_rate": 5e-05,
+  "model_name": "unimolv2",
+  "model_size": "84m",
+  "svr": {
+    "kernel": "rbf",
+    "C": 10000,
+    "epsilon": 0.1,
+    "gamma": "scale",
+    "scaled": false,
+    "n_support": 12291
+  },
+  "external": [
+    "/home/michael/data/unimol_training/testing2/hybrid_data/hybrid_std128_102926.csv",
+    "/home/michael/data/unimol_training/testing2/hybrid_data/hybrid_std109_102926.csv",
+    "/home/michael/data/unimol_training/testing2/hybrid_data/hybrid_pdbbind_102926.csv",
+    "/home/michael/data/unimol_training/testing2/hybrid_data/hybrid_std6074_102926.csv"
+  ],
+  "note": "Uni-Mol fine-tuned on S\u00b0, then unscaled RBF SVR on the selected_features descriptors plus UniMolPred. Both fit on the 80% split only."
+}

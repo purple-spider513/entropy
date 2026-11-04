@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-test_data=pd.read_csv("./hybrid_pdbbind.csv")
-#X_test=test_data[["ring","heavy","H","s_heavy_bond","MW","B","Br","C.1","C.2","C.3","C.ar","C.cat","Cl","F","Fe","I","N.1","N.2","N.3","N.4","N.am","N.ar","N.pl3","O.2","O.3","O.co2","P.3","S.2","S.3","S.O","S.O2","S.o","S.o2","Si","symmetry"]]
-X_test=test_data[["H","B","Br","C.1","C.2","C.3","C.ar","C.cat","Cl","F","Fe","I","N.1","N.2","N.3","N.4","N.am","N.ar","N.pl3","O.2","O.3","O.co2","P.3","S.2","S.3","S.O","S.O2","S.o","S.o2","Si"]]
+test_data=pd.read_csv("./hybrid_pdbbind_102926.csv")
+X_test=test_data[["ring","heavy","H","s_heavy_bond","MW","B","Br","C.1","C.2","C.3","C.ar","C.cat","Cl","F","Fe","I","N.1","N.2","N.3","N.4","N.am","N.ar","N.pl3","O.2","O.3","O.co2","P.3","S.2","S.3","S.O","S.O2","S.o","S.o2","Si","symmetry"]]
+#X_test=test_data[["H","B","Br","C.1","C.2","C.3","C.ar","C.cat","Cl","F","Fe","I","N.1","N.2","N.3","N.4","N.am","N.ar","N.pl3","O.2","O.3","O.co2","P.3","S.2","S.3","S.O","S.O2","S.o","S.o2","Si"]]
 y_test=test_data["entropy"]
 
 from sklearn.svm import SVR
@@ -10,13 +10,13 @@ estimator=SVR(kernel='rbf', C=10000, epsilon=0.1)
 #estimator.fit(X_train,y_train)
 
 import joblib
-#joblib.dump(estimator,"/4T/projects/entropy/SVR_V2/sv_atom.pkl")
-estimator=joblib.load("/4T/projects/entropy/SVR_V2/sv_atom.pkl")
+#joblib.dump(estimator,"./sv_atom.pkl")
+estimator=joblib.load("./sv_atom.pkl")
 
 data_test=pd.DataFrame(y_test)
 y_pre=estimator.predict(X_test)
 data_test["Pre"]=y_pre
-data_test.to_csv("./sv_atom_results_stdpdbbind.csv")
+data_test.to_csv("./sv_atom_results_pdbbind.csv")
 
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
 r2=r2_score(y_test, y_pre)

@@ -1,44 +1,63 @@
 # Gas-phase entropy prediction
 
-Code, data, and trained models for predicting the gas-phase entropy of small molecules (ligands) from their structure. The repository includes support-vector regression (SVR) on count descriptors, a Chemprop D-MPNN, a GINE graph neural network, and two models that combine SVR with Uni-Mol.
+Code, data, and trained models for predicting the gas-phase standard molar entropy S° (J⋅mol⁻¹⋅K⁻¹) of small molecules (ligands) from their structure. The repository includes support-vector regression (SVR) on count descriptors, a Chemprop D-MPNN, a GINE graph neural network, and two models that combine SVR with Uni-Mol.
 
 ## Layout
 
 ```
 .
-├── hybrid_data/             Training and external test CSV files
-├── descriptor_preparation/  Builds atom, bond and element count tables from mol2 files
-├── classical_SVR/           Support-vector regression baselines
-├── D-MPNN/                  Chemprop D-MPNN models (SMILES only, and SMILES plus descriptors)
-├── GINE/                    GINE graph neural network models
-├── Uni-Mol_train/           SVR stacked on a Uni-Mol prediction
-├── Uni-Mol_Residual/        SVR plus a Uni-Mol model that learns the SVR residual
-└── selected_features        The 256 descriptor names used by the bond-feature residual model
+├── descriptor_preparation/  Builds descriptor tables and corrected entropy labels from mol2 files
+├── classical_SVR/           SVR baselines, plus the training and external test CSVs
+├── D-MPNN_SVR/              Chemprop D-MPNN models (SMILES only, and SMILES plus descriptors)
+├── GINE_SVR/                GINE graph neural network models (graph only, and graph plus descriptors)
+├── Uni-Mol_SVR/             Fine-tuned Uni-Mol, then an SVR on descriptors plus the Uni-Mol prediction
+├── unimol_residual/         SVR first, then Uni-Mol trained on the SVR residual
+└── eval_500k/               Prediction speed test of the residual model on 10k to 500k molecules
 ```
 
 Each folder has its own README that lists its files and shows how to run them.
 
 ## Data
 
-- `hybrid_data/hybrid_train_091926.csv`: main training set, 14,459 molecules. Columns are `ID`, `SMILES`, `entropy` (the target) and 289 descriptor columns.
-- `hybrid_data/hybrid_pdbbind.csv`, `hybrid_std109.csv`, `hybrid_std128.csv` and `hybrid_std6074.csv`: external test sets with 311, 109, 128 and 6,074 molecules.
+All data files are in `classical_SVR/`:
 
-`classical_SVR/`, `D-MPNN/hybrid_data/` and `GINE/hybrid_data/` hold copies of `hybrid_train_091926.csv` and the four external sets, so that each model folder can run on its own.
+| File | Rows | Role |
+|---|---|---|
+| `hybrid_train_102926.csv` | 15,546 | Training set. Labels include the conformer-multiplicity and rotational-symmetry corrections. |
+| `hybrid_std128_102926.csv` | 128 | External test set (experimental) |
+| `hybrid_std109_102926.csv` | 109 | External test set (experimental) |
+| `hybrid_pdbbind_102926.csv` | 311 | External test set (DFT-labelled PDBbind ligands) |
+| `hybrid_std6074_102926.csv` | 6,074 | External test set (experimental) |
 
-## Trained Uni-Mol checkpoints
+Each CSV has `ID`, `SMILES`, `entropy` (the target) and 289 descriptor columns. In `hybrid_std128_102926.csv`, the labels of benzyl alcohol and benzaldehyde were corrected on 2026-11-02.
 
-The three Uni-Mol checkpoints are about 334 MB each, too large for this repository. Download them from the model checkpoints release and place them at these paths:
+`selected_features` (in `D-MPNN_SVR/`, `GINE_SVR/` and `Uni-Mol_SVR/`, all identical) lists the 256 descriptors used by the "bond features" models.
+
+To give the other model folders the `hybrid_data/` folder their commands expect, run this once from the repository root:
+
+```bash
+for d in D-MPNN_SVR GINE_SVR Uni-Mol_SVR unimol_residual; do
+  mkdir -p $d/hybrid_data && cp classical_SVR/hybrid_*_102926.csv $d/hybrid_data/
+done
+cp D-MPNN_SVR/selected_features unimol_residual/
+```
+
+## Trained checkpoints
+
+Files over 100 MB cannot be stored in a GitHub repository. Download them from the release attached to this repository and place them at these paths:
 
 | Release file | Place at |
-| --- | --- |
-| `svr_general_residual_run_bond_model_0.pth` | `Uni-Mol_Residual/svr_general_residual_run_bond/unimol/model_0.pth` |
-| `svr_general_residual_run_heavy_model_0.pth` | `Uni-Mol_Residual/svr_general_residual_run_heavy/unimol/model_0.pth` |
-| `svr_residual_bondfeat_std6074_80_10_10_model_0.pth` | `Uni-Mol_Residual/svr_residual_bondfeat_std6074_80_10_10/unimol/model_0.pth` |
+|---|---|
+| `unimol_residual_bond_model_0.pth` | `unimol_residual/svr_general_residual_run_bond_conformer_symmetry/unimol/model_0.pth` |
+| `unimol_residual_all_model_0.pth` | `unimol_residual/svr_general_residual_run_all_conformer_symmetry/unimol/model_0.pth` |
+| `unimol_residual_std6074_model_0.pth` | `unimol_residual/svr_residual_allfeat_std6074_102926_80_10_10/unimol/model_0.pth` |
+| `unimol_svr_no_oversample_model_0.pth` | `Uni-Mol_SVR/unimol_ft_entropy_no_oversample_102926_80_10_10_selfeat_svr/unimol/model_0.pth` |
+| `unimol_svr_os3seg_model_0.pth` | `Uni-Mol_SVR/unimol_ft_entropy_os3seg_102926_80_10_10_selfeat_svr/unimol/model_0.pth` |
 
-The D-MPNN checkpoints and the Uni-Mol prediction file (`Uni-Mol_Residual/predict_rate/svr_general_residual_run_bond_500k_preds/hybrid_test_500k_preds.csv`) are included in the repository, and are between 50 and 100 MB each.
+The D-MPNN models (`best.pt`, about 50 MB each) and the GINE checkpoints are in the repository. The PyTorch Lightning `checkpoints/*.ckpt` files from D-MPNN training are not included; prediction uses `best.pt` only.
 
 ## Before running
 
 - Run each script from inside its own folder. The scripts use relative paths.
-- Several scripts contain paths and GPU IDs from the machine they were written on. The folder READMEs say what to change.
-- `GINE` needs the `entropy_gnn` package, which is not included in this repository.
+- Several scripts default to a GPU ID from the machine they were written on. Pass `--gpu 0` (or `--gpu cpu`) as described in each folder README.
+- Some saved config and log files contain paths from the original machine. They are a record of each run and are not needed to use the models.
